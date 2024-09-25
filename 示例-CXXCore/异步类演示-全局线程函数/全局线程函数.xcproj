@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<project name="" ui_loadType="1" ui_zipPassword="" expand="1">
+	<language value="xc" />
+	<vc config="调试版" platform="x86" moduleLib="lib" autoDefFile="1">
+		<setting>
+			<config name="mydebug">
+				<x86>
+					<common debug="1" logo="/nologo" platformToolset="vs2019" runtimeLibrary="/MDd" sdk="Windows10" type="exe" warningLevel="/W3" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x86>
+				<x64>
+					<common debug="1" logo="/nologo" platformToolset="vs2015" runtimeLibrary="/MDd" sdk="Windows7" type="exe" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x64>
+			</config>
+			<config name="myrelease">
+				<x86>
+					<common debug="0" logo="/nologo" optimizeCode="/Ox" platformToolset="vs2019" runtimeLibrary="/MT" sdk="Windows10" type="exe" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x86>
+				<x64>
+					<common debug="0" logo="/nologo" platformToolset="vs2015" runtimeLibrary="/MT" sdk="Windows7" type="exe" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x64>
+			</config>
+			<config name="调试版">
+				<x86>
+					<common cplusStd="/std:c++17" debug="1" platformToolset="vs2022" runtimeLibrary="/MDd" sdk="Windows10" type="exe" warningLevel="/W3" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x86>
+				<x64>
+					<common cplusStd="/std:c++17" debug="1" platformToolset="vs2022" runtimeLibrary="/MDd" sdk="Windows10" type="exe" warningLevel="/W3" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x64>
+			</config>
+			<config name="发布版">
+				<x86>
+					<common debug="0" platformToolset="vs2019" runtimeLibrary="/MT" sdk="Windows7" type="exe" warningLevel="/W3" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x86>
+				<x64>
+					<common cplusStd="/std:c++17" debug="0" platformToolset="vs2022" runtimeLibrary="/MT" sdk="Windows10" type="exe" warningLevel="/W3" />
+					<options value="" />
+					<options_link value="" />
+					<def_file path="" />
+					<out name="" out_path="" obj_path="" />
+					<include_path />
+					<lib_path />
+					<exe_path />
+					<lib_import>
+						<item name="kernel32.lib" />
+						<item name="user32.lib" />
+						<item name="gdi32.lib" />
+					</lib_import>
+					<lib_ignore />
+					<macro />
+				</x64>
+			</config>
+		</setting>
+	</vc>
+	<modules>
+		<item path="module_base.h" name="基础模块" />
+		<item path="module_cxxcore.h" name="炫扩展模块" />
+	</modules>
+	<codeExpand />
+	<watches />
+	<breakpoints />
+	<bookmarks />
+</project>

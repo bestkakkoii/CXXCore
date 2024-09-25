@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="pimpl">
+      <UniqueIdentifier>{a5124ed1-f8d2-49f5-83c0-df0e2bb07f81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxscopedhandle">
+      <UniqueIdentifier>{4056f88f-0eee-4d7f-b581-81e50a4d82ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxstring">
+      <UniqueIdentifier>{e5669b0c-e7e1-4a5b-b5b8-a7f594131958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxdebug">
+      <UniqueIdentifier>{5e915fb9-ec85-4c37-97e4-37cde1efaa2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxcom">
+      <UniqueIdentifier>{5bc609de-f0f4-458e-970f-acb386179ebb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxsetting">
+      <UniqueIdentifier>{d6d54b7f-3369-4424-8d28-369a7bb0f328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxsemaphore">
+      <UniqueIdentifier>{4902a456-784b-408f-96b8-df8ce7f20adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxregex">
+      <UniqueIdentifier>{ad7afff6-9e97-452f-b887-0e633c63edde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxtextcodec">
+      <UniqueIdentifier>{b74b1326-2559-4b69-8f68-b879e0f9ab39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxvariant">
+      <UniqueIdentifier>{e5e247f1-514e-43b6-8bc2-41c77735124b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxlibrary">
+      <UniqueIdentifier>{3b8c3bac-1746-4198-93ff-c33893accb0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template">
+      <UniqueIdentifier>{b834355d-9904-4162-8485-ac78f637e67a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxelapsedtimer">
+      <UniqueIdentifier>{6d852714-f116-417f-9d32-fac033975c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxfiledialog">
+      <UniqueIdentifier>{4d3fe2b1-3071-4dd4-a444-0f74e17c3696}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxqueue">
+      <UniqueIdentifier>{6c148d56-15c7-4b4b-b270-11c5f757f1ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxhash">
+      <UniqueIdentifier>{a2d0fce6-6d1d-4428-8e28-fd1b92377c96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxatomic">
+      <UniqueIdentifier>{99b3096d-68b5-415f-acd2-93f29665616e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxvector">
+      <UniqueIdentifier>{1ef91ee8-08a3-4149-bc1a-5a04cfcc8687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxstack">
+      <UniqueIdentifier>{4599ad97-4374-4526-b92b-ab31dec351da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxscopedpointer">
+      <UniqueIdentifier>{36a51504-cc5b-4098-a243-19650001dad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxprocess">
+      <UniqueIdentifier>{290116d8-b2ea-46a7-8cde-04be0b04d7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxapplication">
+      <UniqueIdentifier>{6c8226b5-4462-4d1b-a41d-87d59def8a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxdir">
+      <UniqueIdentifier>{6e66cae1-f0b4-4078-ba0a-507f34543be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxwintoast">
+      <UniqueIdentifier>{f25b3db3-eacc-4833-b62f-6608f0d7e392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="old">
+      <UniqueIdentifier>{a1fd305d-1b29-44bc-9071-fc01f4073c89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxrandom">
+      <UniqueIdentifier>{304d45de-e262-4296-9cdf-0d2890643a4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxmutex">
+      <UniqueIdentifier>{f68b746d-1e96-4eee-87c6-00d0bc5b1a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxmemorypool">
+      <UniqueIdentifier>{43d4f465-2a87-4dfe-9c28-be45140139e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxcrypto">
+      <UniqueIdentifier>{aa2001bc-3880-4d19-ac1d-7bd235388d04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxasync">
+      <UniqueIdentifier>{fa76edd7-a75f-49a4-af5a-8872b08fa765}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxjson">
+      <UniqueIdentifier>{4901dbc1-60df-498b-adbd-56d3e911f02d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxmap">
+      <UniqueIdentifier>{3bf99c2f-91f9-41e2-bbda-226f46889cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxpair">
+      <UniqueIdentifier>{52a58b07-832c-48d1-a887-ac7a99938246}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxset">
+      <UniqueIdentifier>{4a681ec2-9bea-4e3a-a0bb-b88c14f71d97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxcache">
+      <UniqueIdentifier>{1826ff5d-f800-4926-a07c-bdad0db5340d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxcontiguouscache">
+      <UniqueIdentifier>{686024de-2450-426c-962b-9f9417df4f35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxsharedmemory">
+      <UniqueIdentifier>{c7a42b51-5201-4cc4-869e-67d1a09e8337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxdatetime">
+      <UniqueIdentifier>{bc5d7a54-ea13-4c5f-a502-f11bcd185782}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxmath">
+      <UniqueIdentifier>{6233005b-5599-401a-ae5e-74857bf8a89b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxmemory">
+      <UniqueIdentifier>{a910dd0d-9587-458c-b43a-461ba8df049a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rdparty">
+      <UniqueIdentifier>{af10ef05-6579-4719-a378-9593c2cd527e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxpoint">
+      <UniqueIdentifier>{4f0db38a-b192-4d1f-9d83-24101e638d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="old\cxxcleanuphandler">
+      <UniqueIdentifier>{b3bb7309-373b-42aa-a1d1-5b2051c9ae6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pimpl\cxxfile">
+      <UniqueIdentifier>{f393532a-e734-4835-a8ca-e65513365013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxscopedguard">
+      <UniqueIdentifier>{c4640f5a-1623-4761-b2f7-7425345db2d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxsharedpointer">
+      <UniqueIdentifier>{338c52cc-a1a1-4fe0-907c-f1636dd2806b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\wintoastlib\src\wintoastlib.cpp">
+      <Filter>3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxcore.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxglobal.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\pch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxapplication.cpp">
+      <Filter>pimpl\cxxapplication</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxcom.cpp">
+      <Filter>pimpl\cxxcom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxdebug.cpp">
+      <Filter>pimpl\cxxdebug</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxcrypto.cpp">
+      <Filter>old\cxxcrypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxelapsedtimer.cpp">
+      <Filter>pimpl\cxxelapsedtimer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxfiledialog.cpp">
+      <Filter>pimpl\cxxfiledialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxdir.cpp">
+      <Filter>pimpl\cxxdir</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxfile.cpp">
+      <Filter>pimpl\cxxfile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxjson.cpp">
+      <Filter>old\cxxjson</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxlibrary.cpp">
+      <Filter>pimpl\cxxlibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxmemory.cpp">
+      <Filter>old\cxxmemory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxpoint.cpp">
+      <Filter>old\cxxpoint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxmutex.cpp">
+      <Filter>old\cxxmutex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxmemorypool.cpp">
+      <Filter>old\cxxmemorypool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxprocess.cpp">
+      <Filter>pimpl\cxxprocess</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxreadwritelock.cpp">
+      <Filter>old\cxxmutex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxscopedhandle.cpp">
+      <Filter>pimpl\cxxscopedhandle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxsemaphore.cpp">
+      <Filter>pimpl\cxxsemaphore</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxmutexlocker.cpp">
+      <Filter>old\cxxmutex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxsetting.cpp">
+      <Filter>pimpl\cxxsetting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxstring.cpp">
+      <Filter>pimpl\cxxstring</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxtextcodec.cpp">
+      <Filter>pimpl\cxxtextcodec</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxvariant.cpp">
+      <Filter>pimpl\cxxvariant</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxwintoast.cpp">
+      <Filter>pimpl\cxxwintoast</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxregex.cpp">
+      <Filter>pimpl\cxxregex</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxstack.cpp">
+      <Filter>template\cxxstack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxatomic.cpp">
+      <Filter>template\cxxatomic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxcache.cpp">
+      <Filter>template\cxxcache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxcontiguouscache.cpp">
+      <Filter>template\cxxcontiguouscache</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxhash.cpp">
+      <Filter>template\cxxhash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxmap.cpp">
+      <Filter>template\cxxmap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxpair.cpp">
+      <Filter>template\cxxpair</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxqueue.cpp">
+      <Filter>template\cxxqueue</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxvector.cpp">
+      <Filter>template\cxxvector</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxset.cpp">
+      <Filter>template\cxxset</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxthread.cpp">
+      <Filter>old\cxxasync</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxscopedpointer.cpp">
+      <Filter>template\cxxscopedpointer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxcleanuphandler.cpp">
+      <Filter>old\cxxcleanuphandler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxdate.cpp">
+      <Filter>old\cxxdatetime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxtime.cpp">
+      <Filter>old\cxxdatetime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxdatetime.cpp">
+      <Filter>old\cxxdatetime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxrandom.cpp">
+      <Filter>old\cxxrandom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxscopedguard.cpp">
+      <Filter>template\cxxscopedguard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxsharedmemory.cpp">
+      <Filter>old\cxxsharedmemory</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxsharedpointer.cpp">
+      <Filter>template\cxxsharedpointer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\3rdparty\wintoastlib\include\wintoastlib.h">
+      <Filter>3rdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxfile_p.h">
+      <Filter>pimpl\cxxfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxtime.h">
+      <Filter>old\cxxdatetime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxdate.h">
+      <Filter>old\cxxdatetime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxdatetime.h">
+      <Filter>old\cxxdatetime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxcore.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxconfig.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxglobal.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\pch.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxwritelocker.h">
+      <Filter>old\cxxmutex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxtextcodec_p.h">
+      <Filter>pimpl\cxxtextcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxtextcodec.h">
+      <Filter>pimpl\cxxtextcodec</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxstring.h">
+      <Filter>pimpl\cxxstring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxstring_p.h">
+      <Filter>pimpl\cxxstring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxscopedhandle.h">
+      <Filter>pimpl\cxxscopedhandle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxscopedhandle_p.h">
+      <Filter>pimpl\cxxscopedhandle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxprocess.h">
+      <Filter>pimpl\cxxprocess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxprocess_p.h">
+      <Filter>pimpl\cxxprocess</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxvariant_p.h">
+      <Filter>pimpl\cxxvariant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxvariant.h">
+      <Filter>pimpl\cxxvariant</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxsemaphore_p.h">
+      <Filter>pimpl\cxxsemaphore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxsemaphore.h">
+      <Filter>pimpl\cxxsemaphore</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxelapsedtimer_p.h">
+      <Filter>pimpl\cxxelapsedtimer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxelapsedtimer.h">
+      <Filter>pimpl\cxxelapsedtimer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxsetting_p.h">
+      <Filter>pimpl\cxxsetting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxsetting.h">
+      <Filter>pimpl\cxxsetting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxregex_p.h">
+      <Filter>pimpl\cxxregex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxregex.h">
+      <Filter>pimpl\cxxregex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxreadwritelock.h">
+      <Filter>old\cxxmutex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxscopedpointer.h">
+      <Filter>template\cxxscopedpointer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxmemory.h">
+      <Filter>old\cxxmemory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxthread.h">
+      <Filter>old\cxxasync</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxvector.h">
+      <Filter>template\cxxvector</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxlibrary.h">
+      <Filter>pimpl\cxxlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxlibrary_p.h">
+      <Filter>pimpl\cxxlibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxqueue.h">
+      <Filter>template\cxxqueue</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxset.h">
+      <Filter>template\cxxset</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxdebug_p.h">
+      <Filter>pimpl\cxxdebug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxdebug.h">
+      <Filter>pimpl\cxxdebug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxcom.h">
+      <Filter>pimpl\cxxcom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxcom_p.h">
+      <Filter>pimpl\cxxcom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxapplication_p.h">
+      <Filter>pimpl\cxxapplication</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxapplication.h">
+      <Filter>pimpl\cxxapplication</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxfiledialog_p.h">
+      <Filter>pimpl\cxxfiledialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxfiledialog.h">
+      <Filter>pimpl\cxxfiledialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxdir_p.h">
+      <Filter>pimpl\cxxdir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxdir.h">
+      <Filter>pimpl\cxxdir</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxwintoast_p.h">
+      <Filter>pimpl\cxxwintoast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxwintoast.h">
+      <Filter>pimpl\cxxwintoast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxstack.h">
+      <Filter>template\cxxstack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxpoint.h">
+      <Filter>old\cxxpoint</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxjson.h">
+      <Filter>old\cxxjson</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxatomic.h">
+      <Filter>template\cxxatomic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxcache.h">
+      <Filter>template\cxxcache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxcontiguouscache.h">
+      <Filter>template\cxxcontiguouscache</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxcleanuphandler.h">
+      <Filter>old\cxxcleanuphandler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxfile.h">
+      <Filter>pimpl\cxxfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxcrypto.h">
+      <Filter>old\cxxcrypto</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxhash.h">
+      <Filter>template\cxxhash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxmap.h">
+      <Filter>template\cxxmap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxsharedmemory.h">
+      <Filter>old\cxxsharedmemory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxscopedguard.h">
+      <Filter>template\cxxscopedguard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxrandom.h">
+      <Filter>old\cxxrandom</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxmemorypool.h">
+      <Filter>old\cxxmemorypool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxreadlocker.h">
+      <Filter>old\cxxmutex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxmutex.h">
+      <Filter>old\cxxmutex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxmutexlocker.h">
+      <Filter>old\cxxmutex</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxpair.h">
+      <Filter>template\cxxpair</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxmath.h">
+      <Filter>old\cxxmath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_cxxcore.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxcontainer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxmemorysafe.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxthreadsafe.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxutility.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxcom.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxjson.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxwintoast.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxpoint.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxdatetime.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxfiledialog.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxmemory.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxsharedpointer.h">
+      <Filter>template\cxxsharedpointer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CHANGELOG.md">
+      <Filter>include</Filter>
+    </None>
+    <None Include="..\..\README.md">
+      <Filter>include</Filter>
+    </None>
+  </ItemGroup>
+</Project>

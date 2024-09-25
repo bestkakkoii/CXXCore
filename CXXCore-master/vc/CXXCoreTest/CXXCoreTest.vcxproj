@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{C63F6E8B-8B8D-4BAB-A408-1EC7C4CE692D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CXModuleTest</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectSubType>NativeUnitTestProject</ProjectSubType>
+    <ProjectName>CXXCoreTest</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)deploy\bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName).x64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)deploy\bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)deploy\bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)deploy\bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <IntDir>..\build\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName).x64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+      <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;$(SolutionDir)..\lib;$(SolutionDir)..\3rdparty;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+      <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;$(SolutionDir)..\lib;$(SolutionDir)..\3rdparty;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+      <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;$(SolutionDir)..\lib;$(SolutionDir)..\3rdparty;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(VCInstallDir)UnitTest\include;$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseFullPaths>true</UseFullPaths>
+      <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(VCInstallDir)UnitTest\lib;$(SolutionDir)..\lib;$(SolutionDir)..\3rdparty;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\3rdparty\wintoastlib\src\wintoastlib.cpp" />
+    <ClCompile Include="..\..\src\cxxcore.cpp" />
+    <ClCompile Include="..\..\src\cxxapplication.cpp" />
+    <ClCompile Include="..\..\src\cxxatomic.cpp" />
+    <ClCompile Include="..\..\src\cxxcache.cpp" />
+    <ClCompile Include="..\..\src\cxxcleanuphandler.cpp" />
+    <ClCompile Include="..\..\src\cxxcom.cpp" />
+    <ClCompile Include="..\..\src\cxxcontiguouscache.cpp" />
+    <ClCompile Include="..\..\src\cxxcrypto.cpp" />
+    <ClCompile Include="..\..\src\cxxdate.cpp" />
+    <ClCompile Include="..\..\src\cxxdatetime.cpp" />
+    <ClCompile Include="..\..\src\cxxdebug.cpp" />
+    <ClCompile Include="..\..\src\cxxdir.cpp" />
+    <ClCompile Include="..\..\src\cxxelapsedtimer.cpp" />
+    <ClCompile Include="..\..\src\cxxfile.cpp" />
+    <ClCompile Include="..\..\src\cxxfiledialog.cpp" />
+    <ClCompile Include="..\..\src\cxxglobal.cpp" />
+    <ClCompile Include="..\..\src\cxxhash.cpp" />
+    <ClCompile Include="..\..\src\cxxjson.cpp" />
+    <ClCompile Include="..\..\src\cxxlibrary.cpp" />
+    <ClCompile Include="..\..\src\cxxmap.cpp" />
+    <ClCompile Include="..\..\src\cxxmemory.cpp" />
+    <ClCompile Include="..\..\src\cxxmemorypool.cpp" />
+    <ClCompile Include="..\..\src\cxxmutex.cpp" />
+    <ClCompile Include="..\..\src\cxxmutexlocker.cpp" />
+    <ClCompile Include="..\..\src\cxxpair.cpp" />
+    <ClCompile Include="..\..\src\cxxpoint.cpp" />
+    <ClCompile Include="..\..\src\cxxprocess.cpp" />
+    <ClCompile Include="..\..\src\cxxqueue.cpp" />
+    <ClCompile Include="..\..\src\cxxrandom.cpp" />
+    <ClCompile Include="..\..\src\cxxreadwritelock.cpp" />
+    <ClCompile Include="..\..\src\cxxregex.cpp" />
+    <ClCompile Include="..\..\src\cxxscopedguard.cpp" />
+    <ClCompile Include="..\..\src\cxxscopedhandle.cpp" />
+    <ClCompile Include="..\..\src\cxxscopedpointer.cpp" />
+    <ClCompile Include="..\..\src\cxxsemaphore.cpp" />
+    <ClCompile Include="..\..\src\cxxset.cpp" />
+    <ClCompile Include="..\..\src\cxxsetting.cpp" />
+    <ClCompile Include="..\..\src\cxxsharedmemory.cpp" />
+    <ClCompile Include="..\..\src\cxxsharedpointer.cpp" />
+    <ClCompile Include="..\..\src\cxxstack.cpp" />
+    <ClCompile Include="..\..\src\cxxstring.cpp" />
+    <ClCompile Include="..\..\src\cxxtextcodec.cpp" />
+    <ClCompile Include="..\..\src\cxxthread.cpp" />
+    <ClCompile Include="..\..\src\cxxtime.cpp" />
+    <ClCompile Include="..\..\src\cxxvariant.cpp" />
+    <ClCompile Include="..\..\src\cxxvector.cpp" />
+    <ClCompile Include="..\..\src\cxxwintoast.cpp" />
+    <ClCompile Include="..\..\src\pch.cpp" />
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\module_cxxcore.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxcom.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxcontainer.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxdatetime.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxfiledialog.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxjson.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxmemory.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxmemorysafe.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxpoint.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxthreadsafe.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxutility.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxwintoast.h" />
+    <ClInclude Include="..\..\3rdparty\wintoastlib\include\wintoastlib.h" />
+    <ClInclude Include="..\..\include\cxxcore.h" />
+    <ClInclude Include="..\..\include\cxxapplication.h" />
+    <ClInclude Include="..\..\include\cxxapplication_p.h" />
+    <ClInclude Include="..\..\include\cxxatomic.h" />
+    <ClInclude Include="..\..\include\cxxcache.h" />
+    <ClInclude Include="..\..\include\cxxcleanuphandler.h" />
+    <ClInclude Include="..\..\include\cxxcom.h" />
+    <ClInclude Include="..\..\include\cxxcom_p.h" />
+    <ClInclude Include="..\..\include\cxxconfig.h" />
+    <ClInclude Include="..\..\include\cxxcontiguouscache.h" />
+    <ClInclude Include="..\..\include\cxxcrypto.h" />
+    <ClInclude Include="..\..\include\cxxdate.h" />
+    <ClInclude Include="..\..\include\cxxdatetime.h" />
+    <ClInclude Include="..\..\include\cxxdebug.h" />
+    <ClInclude Include="..\..\include\cxxdebug_p.h" />
+    <ClInclude Include="..\..\include\cxxdir.h" />
+    <ClInclude Include="..\..\include\cxxdir_p.h" />
+    <ClInclude Include="..\..\include\cxxelapsedtimer.h" />
+    <ClInclude Include="..\..\include\cxxelapsedtimer_p.h" />
+    <ClInclude Include="..\..\include\cxxfile.h" />
+    <ClInclude Include="..\..\include\cxxfiledialog.h" />
+    <ClInclude Include="..\..\include\cxxfiledialog_p.h" />
+    <ClInclude Include="..\..\include\cxxfile_p.h" />
+    <ClInclude Include="..\..\include\cxxglobal.h" />
+    <ClInclude Include="..\..\include\cxxhash.h" />
+    <ClInclude Include="..\..\include\cxxjson.h" />
+    <ClInclude Include="..\..\include\cxxlibrary.h" />
+    <ClInclude Include="..\..\include\cxxlibrary_p.h" />
+    <ClInclude Include="..\..\include\cxxmap.h" />
+    <ClInclude Include="..\..\include\cxxmath.h" />
+    <ClInclude Include="..\..\include\cxxmemory.h" />
+    <ClInclude Include="..\..\include\cxxmemorypool.h" />
+    <ClInclude Include="..\..\include\cxxmutex.h" />
+    <ClInclude Include="..\..\include\cxxmutexlocker.h" />
+    <ClInclude Include="..\..\include\cxxpair.h" />
+    <ClInclude Include="..\..\include\cxxpoint.h" />
+    <ClInclude Include="..\..\include\cxxprocess.h" />
+    <ClInclude Include="..\..\include\cxxprocess_p.h" />
+    <ClInclude Include="..\..\include\cxxqueue.h" />
+    <ClInclude Include="..\..\include\cxxrandom.h" />
+    <ClInclude Include="..\..\include\cxxreadlocker.h" />
+    <ClInclude Include="..\..\include\cxxreadwritelock.h" />
+    <ClInclude Include="..\..\include\cxxregex.h" />
+    <ClInclude Include="..\..\include\cxxregex_p.h" />
+    <ClInclude Include="..\..\include\cxxscopedguard.h" />
+    <ClInclude Include="..\..\include\cxxscopedhandle.h" />
+    <ClInclude Include="..\..\include\cxxscopedhandle_p.h" />
+    <ClInclude Include="..\..\include\cxxscopedpointer.h" />
+    <ClInclude Include="..\..\include\cxxsemaphore.h" />
+    <ClInclude Include="..\..\include\cxxsemaphore_p.h" />
+    <ClInclude Include="..\..\include\cxxset.h" />
+    <ClInclude Include="..\..\include\cxxsetting.h" />
+    <ClInclude Include="..\..\include\cxxsetting_p.h" />
+    <ClInclude Include="..\..\include\cxxsharedmemory.h" />
+    <ClInclude Include="..\..\include\cxxsharedpointer.h" />
+    <ClInclude Include="..\..\include\cxxstack.h" />
+    <ClInclude Include="..\..\include\cxxstring.h" />
+    <ClInclude Include="..\..\include\cxxstring_p.h" />
+    <ClInclude Include="..\..\include\cxxtextcodec.h" />
+    <ClInclude Include="..\..\include\cxxtextcodec_p.h" />
+    <ClInclude Include="..\..\include\cxxthread.h" />
+    <ClInclude Include="..\..\include\cxxtime.h" />
+    <ClInclude Include="..\..\include\cxxvariant.h" />
+    <ClInclude Include="..\..\include\cxxvariant_p.h" />
+    <ClInclude Include="..\..\include\cxxvector.h" />
+    <ClInclude Include="..\..\include\cxxwintoast.h" />
+    <ClInclude Include="..\..\include\cxxwintoast_p.h" />
+    <ClInclude Include="..\..\include\cxxwritelocker.h" />
+    <ClInclude Include="..\..\include\pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CHANGELOG.md" />
+    <None Include="..\..\README.md" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
