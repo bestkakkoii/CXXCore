@@ -2620,85 +2620,85 @@ namespace cxx
 		//@隐藏}
 	{
 		//@备註 (0x2) 启用复盖文件时的提示，如果用户选择一个已经存在的文件
-		OverwritePrompt = FOS_OVERWRITEPROMPT, //@别名 启用复盖文件提示
+		OverwritePrompt = 0x2, //@别名 启用复盖文件提示
 
 		//@备註 (0x4) 仅显示在文件类型筛选器中指定的文件类型，不显示所有文件
-		StrictFileTypes = FOS_STRICTFILETYPES, //@别名 严格文件类型
+		StrictFileTypes = 0x4, //@别名 严格文件类型
 
 		//@备註 (0x8) 不允许改变当前目录
-		NoChangeDirectory = FOS_NOCHANGEDIR, //@别名 禁止改变目录
+		NoChangeDirectory = 0x8, //@别名 禁止改变目录
 
 		//@备註 (0x20) 允许用户选择文件夹而不是文件
-		PickFolders = FOS_PICKFOLDERS, //@别名 允许选择文件夹
+		PickFolders = 0x20, //@别名 允许选择文件夹
 
 		//@备註 (0x40) 强制使用文件系统对话框，而不是自定义对话框
-		ForceFileSystem = FOS_FORCEFILESYSTEM, //@别名 强制文件系统对话框
+		ForceFileSystem = 0x40, //@别名 强制文件系统对话框
 
 		//@备註 (0x80) 允许选择所有非存储项目，不仅限于文件系统项目
-		AllNonStorageItems = FOS_ALLNONSTORAGEITEMS, //@别名 允许所有非存储项
+		AllNonStorageItems = 0x80, //@别名 允许所有非存储项
 
 		//@备註 (0x100) 不验证用户输入的文件名或路径
-		NoValidate = FOS_NOVALIDATE, //@别名 禁止验证
+		NoValidate = 0x100, //@别名 禁止验证
 
 		//@备註 (0x200) 允许用户选择多个文件
-		AllowMultiSelect = FOS_ALLOWMULTISELECT, //@别名 允许多选
+		AllowMultiSelect = 0x200, //@别名 允许多选
 
 		//@备註 (0x800) 路径必须存在
-		PathMustExist = FOS_PATHMUSTEXIST, //@别名 路径必须存在
+		PathMustExist = 0x800, //@别名 路径必须存在
 
 		//@备註 (0x1000) 文件必须存在
-		FileMustExist = FOS_FILEMUSTEXIST, //@别名 文件必须存在
+		FileMustExist = 0x1000, //@别名 文件必须存在
 
 		//@备註 (0x2000) 显示创建文件的提示，当用户指定的文件不存在时
-		CreatePrompt = FOS_CREATEPROMPT, //@别名 创建文件提示
+		CreatePrompt = 0x2000, //@别名 创建文件提示
 
 		//@备註 (0x4000) 文件对话框应该检查是否有其他应用程序已经打开了所选文件
-		ShareAware = FOS_SHAREAWARE, //@别名 共享感知
+		ShareAware = 0x4000, //@别名 共享感知
 
 		//@备註 (0x8000) 不允许选择只读文件
-		NoReadOnlyReturn = FOS_NOREADONLYRETURN, //@别名 禁止只读返回
+		NoReadOnlyReturn = 0x8000, //@别名 禁止只读返回
 
 		//@备註 (0x10000) 不测试文件的创建能力
-		NoTestFileCreate = FOS_NOTESTFILECREATE, //@别名 禁止测试文件创建
+		NoTestFileCreate = 0x10000, //@别名 禁止测试文件创建
 
 		//@备註 (0x20000) 隐藏最近访问的位置
-		HideMRUPlaces = FOS_HIDEMRUPLACES, //@别名 隐藏最近访问位置
+		HideMRUPlaces = 0x20000, //@别名 隐藏最近访问位置
 
 		//@备註 (0x40000) 隐藏固定的位置
-		HidePinnedPlaces = FOS_HIDEPINNEDPLACES, //@别名 隐藏固定位置
+		HidePinnedPlaces = 0x40000, //@别名 隐藏固定位置
 
 		//@备註 (0x100000) 不解析shell链接
-		NoDereferenceLinks = FOS_NODEREFERENCELINKS, //@别名 禁止解析链接
+		NoDereferenceLinks = 0x100000, //@别名 禁止解析链接
 
 		//@备註 (0x200000) 需要与确定文件名按钮进行交互
-		OkButtonNeedsInteraction = FOS_OKBUTTONNEEDSINTERACTION, //@别名 需要确定文件名按钮交互
+		OkButtonNeedsInteraction = 0x200000, //@别名 需要确定文件名按钮交互
 
 		//@备註 (0x2000000) 不将文件添加到最近文件列表中
-		DontAddToRecent = FOS_DONTADDTORECENT, //@别名 不添加到最近文件列表
+		DontAddToRecent = 0x2000000, //@别名 不添加到最近文件列表
 
 		//@备註 (0x10000000) 强制显示隐藏文件和文件夹
-		ForceShowHidden = FOS_FORCESHOWHIDDEN, //@别名 强制显示隐藏文件
+		ForceShowHidden = 0x10000000, //@别名 强制显示隐藏文件
 
 		//@备註 (0x20000000) 默认情况下不以最小模式打开
-		DefaultNoMinimode = FOS_DEFAULTNOMINIMODE, //@别名 默认不以最小模式打开
+		DefaultNoMinimode = 0x20000000, //@别名 默认不以最小模式打开
 
 		//@备註 (0x40000000) 强制显示预览面板
-		ForcePreviewPaneOn = FOS_FORCEPREVIEWPANEON, //@别名 强制显示预览面板
+		ForcePreviewPaneOn = 0x40000000, //@别名 强制显示预览面板
 
 		//@备註 (0x80000000) 支持可流式传输的项目
-		SupportStreamableItems = FOS_SUPPORTSTREAMABLEITEMS, //@别名 支持可流式传输项目
+		SupportStreamableItems = 0x80000000, //@别名 支持可流式传输项目
 
 		//@备註 默认打开文件
 		// 复盖提示(0x2) | 严格文件类型(0x4) | 路径必须存在(0x8000) 的组合
-		DefaultOpenFile = FOS_OVERWRITEPROMPT | FOS_STRICTFILETYPES | FOS_PATHMUSTEXIST, //@别名 默认打开文件
+		DefaultOpenFile = OverwritePrompt | StrictFileTypes | PathMustExist,  //@别名 默认打开文件
 
 		//@备註 默认保存文件
 		// 复盖提示(0x2) | 文件必须存在(0x1000) | 严格文件类型(0x4) | 路径必须存在(0x8000) 的组合
-		DefaultSaveFile = FOS_OVERWRITEPROMPT | FOS_FILEMUSTEXIST | FOS_STRICTFILETYPES | FOS_PATHMUSTEXIST, //@别名 默认保存文件
+		DefaultSaveFile = OverwritePrompt | FileMustExist | StrictFileTypes | PathMustExist, //@别名 默认保存文件
 
 		//@备註 默认打开文件夹，包括文件夹选择和路径必须存在
 		// 允许选择文件夹(0x20) | 路径必须存在(0x8000) 的组合
-		DefaultOpenDirectory = FOS_PICKFOLDERS | FOS_PATHMUSTEXIST //@别名 默认打开文件夹
+		DefaultOpenDirectory = PickFolders | PathMustExist, //@别名 默认打开文件夹
 	};
 
 	//@隐藏{
