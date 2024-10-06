@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 //@模块名称 炫扩展模块
 //@版本     炫扩展-核心模块
-//@日期     2024-09-23
+//@日期     2024-10-06
 //@作者     Bestkakkoii
 //@依赖     "module_cxxcore.h"
 //@QQ       1642687802
@@ -60,10 +60,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // - **炫文本默认编码**: UTF-16LE
 // 
 // # 最新更新日志:
-// #### [2024-09-25]()
-//   * 新增 增加字节集和文本数组相关的更多操作函数
-//   * 新增 炫分词器，用于文本分词，可以随时操作分词规则
+// ####[2024 - 10 - 06]()
+// * 修改 应对 IDE 总是出现命名空间解析 BUG，将所有命名空间的枚举移至核心模块
 //
+// [Gitee](https://gitee.com/Bestkakkoii/CXXCore)
+// [Github](https://github.com/bestkakkoii/CXXCore)
 //@模块信息结束
 
 //@模块集合
@@ -102,6 +103,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@src "CXXCore-master\src\cxxdir.cpp"
 //@src "CXXCore-master\src\cxxfile.cpp"
 //@src "CXXCore-master\src\cxxthread.cpp"
+//@src "CXXCore-master\src\cxxapplication.cpp"
 //@src "CXXCore-master\src\cxxdebug.cpp"
 #endif
 

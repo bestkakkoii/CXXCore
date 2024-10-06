@@ -45,23 +45,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@别名 炫
 namespace cxx
 {
-	//@分组{［其他］.炫　ＣＯＭ组件类
 
-	//@别名 线程套间类型
-	enum ThreadApartmentType
-		//@隐藏{
-		: __int64
-		//@隐藏}
-	{
-		//@备注 全局單例
-		//@别名 多线程套间
-		MTA = 0x0,
-		//@备注 每个线程都必須要有自己的COM对象
-		//@别名 单线程套间
-		STA = 0x2
-	};
-
-	//@分组}
 }
 
 //@分组{［其他］.炫　ＣＯＭ组件类

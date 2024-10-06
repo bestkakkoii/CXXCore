@@ -32,49 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@别名 炫
 namespace cxx
 {
-	//@分组{［其他］.炫　进程类
 
-	//@别名 进程错误
-	enum ProcessError
-	{
-		FailedToStart,  //@别名 进程启动失败
-		Crashed,		//@别名 进程崩溃
-		Timedout,		//@别名 进程超时
-		WriteError,		//@别名 进程写入错误
-		ReadError, 		//@别名 进程读取错误
-		UnknownError	//@别名 进程未知错误
-	};
-
-	//@别名 进程状态
-	enum ProcessState
-	{
-		NotRunning,		//@别名 未运行
-		Starting, 		//@别名 启动中
-		Running,		//@别名 运行中
-	};
-
-	//@别名 退出状态
-	enum ExitStatus
-	{
-		NormalExit,		//@别名 正常退出
-		CrashExit,		//@别名 崩溃退出
-	};
-
-	//@别名 进程流打开模式
-	enum ProcessOpenModeFlag
-	{
-		ProcessNotOpen = 0x0000,	//@别名 进程流未打开
-		ProcessReadOnly = 0x0001,	//@别名 进程流只读
-		ProcessWriteOnly = 0x0002,	//@别名 进程流只写
-		//@别名 进程流读写
-		ProcessReadWrite = ProcessReadOnly | ProcessWriteOnly
-	};
-
-	//@隐藏{
-	CXX_DECLARE_FLAGS(ProcessOpenMode, ProcessOpenModeFlag);
-	//@隐藏}
-
-	//@分组}
 }
 
 //@分组{［其他］.炫　进程类

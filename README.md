@@ -18,7 +18,10 @@
 
 </div>
 
-炫扩展 [功能介绍](http://bbs.xcgui.com/forum.php?mod=viewthread&tid=254&extra=page%3D1)。
+炫扩展:
+[功能介绍](http://bbs.xcgui.com/forum.php?mod=viewthread&tid=254&extra=page%3D1)。
+[Gitee](https://gitee.com/Bestkakkoii/CXXCore)
+[Github](https://github.com/bestkakkoii/CXXCore)
 
 # 基本介绍:
 - 本模块着重于线程安全和低调用难度，为了补充炫语言核心模块的不足而存在。

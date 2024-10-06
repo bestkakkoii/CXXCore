@@ -21,9 +21,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #define CXXGLOBAL_H_
 //@隐藏}
 
-
-
-
 #pragma execution_character_set("utf-8")
 
 #include <windows.h>
@@ -2179,6 +2176,536 @@ namespace cxx
 	//@隐藏{
 	CXX_DECLARE_FLAGS(WindowFlags, WindowType);
 	//@隐藏}
+
+#pragma region Enums
+	//@分组{［其他］.炫　ＣＯＭ组件类
+
+	//@别名 线程套间类型
+	enum ThreadApartmentType
+		//@隐藏{
+		: __int64
+		//@隐藏}
+	{
+		//@备注 全局單例
+		//@别名 多线程套间
+		MTA = 0x0,
+		//@备注 每个线程都必須要有自己的COM对象
+		//@别名 单线程套间
+		STA = 0x2
+	};
+
+	//@分组}
+
+	//@分组{［文本］.炫　加密类
+
+	//@别名 哈希算法类型
+	enum HashAlgorithm
+	{
+		MD2,
+		MD4,
+		MD5,
+		SHA1,
+		SHA256,
+		SHA384,
+		SHA512
+	};
+
+	//@别名 加密算法类型
+	enum CryptAlgorithm
+	{
+		RSA,
+		RSA_SIGN,
+		DH,
+		DSA,
+		RC2,
+		RC4,
+		AES,
+		DES,
+		DESX,
+		TripleDES,
+		TripleDES_112,
+		AES_GMAC,
+		AES_CMAC,
+		ECDSA_P256,
+		ECDSA_P384,
+		ECDSA_P521,
+		ECDH_P256,
+		ECDH_P384,
+		ECDH_P521,
+		RNG_FIPS186_DSA,
+		RNG_DUAL_EC
+	};
+
+	//@别名 链模式
+	enum ChainMode
+	{
+		NA,
+		CBC,
+		ECB,
+		CFB,
+		CCM,
+		GCM
+	};
+
+	//@分组}
+
+	//@分组{［其他］.炫　进程类
+
+	//@别名 进程错误
+	enum ProcessError
+	{
+		FailedToStart,  //@别名 进程启动失败
+		Crashed,		//@别名 进程崩溃
+		Timedout,		//@别名 进程超时
+		WriteError,		//@别名 进程写入错误
+		ReadError, 		//@别名 进程读取错误
+		UnknownError	//@别名 进程未知错误
+	};
+
+	//@别名 进程状态
+	enum ProcessState
+	{
+		NotRunning,		//@别名 未运行
+		Starting, 		//@别名 启动中
+		Running,		//@别名 运行中
+	};
+
+	//@别名 退出状态
+	enum ExitStatus
+	{
+		NormalExit,		//@别名 正常退出
+		CrashExit,		//@别名 崩溃退出
+	};
+
+	//@别名 进程流打开模式
+	enum ProcessOpenModeFlag
+	{
+		ProcessNotOpen = 0x0000,	//@别名 进程流未打开
+		ProcessReadOnly = 0x0001,	//@别名 进程流只读
+		ProcessWriteOnly = 0x0002,	//@别名 进程流只写
+		//@别名 进程流读写
+		ProcessReadWrite = ProcessReadOnly | ProcessWriteOnly
+	};
+
+	//@隐藏{
+	CXX_DECLARE_FLAGS(ProcessOpenMode, ProcessOpenModeFlag);
+	//@隐藏}
+
+	//@分组}
+
+	//@分组{［其他］.炫　推送通知类
+
+	// @别名 推送通知排版类型
+	enum WinToastType
+	{
+		ImageAndText01, //@别名 图片和文本01
+		ImageAndText02, //@别名 图片和文本02
+		ImageAndText03, //@别名 图片和文本03
+		ImageAndText04, //@别名 图片和文本04
+		Text01,         //@别名 文本01
+		Text02,         //@别名 文本02
+		Text03,         //@别名 文本03
+		Text04          //@别名 文本04
+	};
+
+	//@别名 推送通知音频
+	enum WinToastAudio
+	{
+		DefaultSound,   //@别名 默认声音
+		IM,				//@别名 IM
+		Mail,			//@别名 邮件
+		Reminder,		//@别名 提醒
+		SMS,			//@别名 短信
+		Alarm,			//@别名 闹钟
+		Alarm2,			//@别名 闹钟2
+		Alarm3,			//@别名 闹钟3
+		Alarm4,			//@别名 闹钟4
+		Alarm5,			//@别名 闹钟5
+		Alarm6,			//@别名 闹钟6
+		Alarm7,			//@别名 闹钟7
+		Alarm8,			//@别名 闹钟8
+		Alarm9,			//@别名 闹钟9
+		Alarm10,		//@别名 闹钟10
+		Call,			//@别名 电话
+		Call1,			//@别名 电话1
+		Call2,			//@别名 电话2
+		Call3,			//@别名 电话3
+		Call4,			//@别名 电话4
+		Call5,			//@别名 电话5
+		Call6,			//@别名 电话6
+		Call7,			//@别名 电话7
+		Call8,			//@别名 电话8
+		Call9,			//@别名 电话9
+		Call10,			//@别名 电话10
+	};
+
+	//@别名 推送通知音频选项
+	enum AudioOption
+	{
+		AudioDefault = 0,    //@别名 默认
+		AudioSilent,		 //@别名 静音
+		AudioLoop,			 //@别名 循环
+	};
+
+	//@别名 推送通知裁剪
+	enum CropHint
+	{
+		Square, //@别名 正方形
+		Circle, //@别名 圆形
+	};
+
+	//@别名 推送通知文本框
+	enum TextField
+	{
+		FirstLine = 0,  //@别名 第一行
+		SecondLine,		//@别名 第二行
+		ThirdLine,		//@别名 第三行
+	};
+
+	//@别名 推送通知结果
+	enum WinToastResult
+	{
+		UserCanceled,		//@别名 用户取消
+		ApplicationHidden,	//@别名 应用程序隐藏
+		TimedOut,			//@别名 超时
+		Successed,			//@别名 成功
+		Failured			//@别名 失败
+	};
+
+	//@分组}
+
+//@分组{［工具］.炫　随机数引擎类
+
+	//@别名 随机数生成引擎类型
+	enum RandomGeneratorsType
+	{
+		//@备注 普通随机数生成引擎 std::default_random_engine
+		//优点:
+		// 通用性好，适用于大多数需要随机数的场景。
+		// 实现依赖于编译器，可能会自动选择最适合当前平台的实现。
+		//缺点 :
+		// 因为是默认引擎，其具体实现可能在不同的编译器和平台间有所不同，导致难以在不同环境下保持结果的一致性。
+		// 可能不是对于所有用途都有最佳的性能或随机性。
+		Regular = 0, //@别名 普通
+
+		//@备注 MinSTD 最小标准(Minimum standard)随机数生成引擎 std::minstd_rand 或 std::minstd_rand0
+		//优点:
+		// 算法简单，速度快，占用资源少。对于基本的随机数需求足够好
+		//缺点 :
+		// 随机性较差，周期较短，不适合用于需要高质量随机数的场景。
+		MinSTD = 1,//@别名 最小标准
+
+		//@备注 基于 Mersenne Twister(梅森旋转算法) 的随机数生成引擎 std::mt19937 或 std::mt19937_64
+		// 19937 是指它的周期长度为 2^19937 - 1
+		//优点:
+		// 高质量随机数，周期长，适用于大多数需要高质量随机数的场景。
+		//缺点 :
+		// 占用资源多，速度慢，不适合用于对性能要求较高的场景。
+		Mt19937 = 2,//@别名 梅森旋转
+	};
+
+	//@别名 随机数分布类型
+	enum RandomDistributionType
+	{
+		//@备注 均匀分布 std::uniform_int_distribution 或 std::uniform_real_distribution
+		Uniform = 0,//@别名 均匀
+
+		//@备注 std::bernoulli_distribution 伯努利分布
+		Bernoulli = 1,//@别名 伯努利
+
+		//@备注 std::binomial_distribution 二项分布
+		Binomial = 2,//@别名 二项
+
+		//@备注 std::negative_binomial_distribution 负二项分布
+		NegativeBinomial = 3, //@别名 负二项
+
+		//@备注 std::geometric_distribution 几何分布
+		Geometric = 4, //@别名 几何
+
+		//@备注 std::poisson_distribution 泊松分布
+		Poisson = 5, //@别名 泊松
+
+		//@备注 std::exponential_distribution 指数分布
+		Exponential = 6, //@别名 指数
+
+		//@备注 std::gamma_distribution 伽马分布
+		Gamma = 7, //@别名 伽马
+
+		//@备注 std::weibull_distribution 威布尔分布
+		Weibull = 8, //@别名 威布尔
+
+		//@备注 std::extreme_value_distribution 极值分布
+		ExtremeValue = 9, //@别名 极值
+
+		//@备注 std::normal_distribution 正态分布
+		Normal = 10, //@别名 正态
+
+		//@备注 std::lognormal_distribution 对数正态分布
+		Lognormal = 11, //@别名 对数正态
+
+		//@备注 std::chi_squared_distribution 卡方分布
+		ChiSquared = 12, //@别名 卡方
+
+		//@备注 std::cauchy_distribution 柯西分布
+		Cauchy = 13, //@别名 柯西
+
+		//@备注 std::fisher_f_distribution F分布
+		FisherF = 14, //@别名 F
+
+		//@备注 std::student_t_distribution t分布
+		StudentT = 15, //@别名 t
+
+		//@备注 std::discrete_distribution 离散分布
+		Discrete = 16, //@别名 离散
+
+		//@备注 std::piecewise_constant_distribution 分段常数分布
+		PiecewiseConstant = 17, //@别名 分段常数
+
+		//@备注 std::piecewise_linear_distribution 分段线性分布
+		PiecewiseLinear = 18 //@别名 分段线性
+	};
+
+	//@分组}
+
+//@分组{［其他］.炫　动态库类
+
+	//@别名 炫調用約定
+	enum CallingConvention
+	{
+		StdCall,	 //@别名 标准调用约定
+		Cdecl,		 //@别名 C调用约定
+		FastCall,   //@别名 快速调用约定
+		ThisCall,   //@别名 类成员调用约定
+		VectorCall, //@别名 向量调用约定
+	};
+
+	//@别名 炫库标志
+	enum LibraryFlags
+	{
+		//DONT_RESOLVE_DLL_REFERENCES
+		DontResolveDllReferences = 0x00000001,		  //@别名 不解析动态库引用
+		//LOAD_LIBRARY_AS_DATAFILE
+		LoadLibraryAsDataFile = 0x00000002,			  //@别名 作为数据文件载入
+		//LOAD_WITH_ALTERED_SEARCH_PATH
+		LoadWithAlteredSearchPath = 0x00000008,		  //@别名 使用更改的搜索路径载入
+		//LOAD_IGNORE_CODE_AUTHZ_LEVEL
+		LoadIgnoreCodeAuthzLevel = 0x00000010,		  //@别名 忽略代码授权级别
+		//LOAD_LIBRARY_AS_IMAGE_RESOURCE 
+		LoadLibraryAsImageResource = 0x00000020,	  //@别名 作为图像资源载入
+		//LOAD_LIBRARY_AS_DATAFILE_EXCLUSIVE
+		LoadLibraryAsDataFileExclusive = 0x00000040,  //@别名 作为独占数据文件载入
+		//LOAD_LIBRARY_REQUIRE_SIGNED_TARGET 
+		LoadLibraryRequireSignedTarget = 0x00000080,  //@别名 要求签名目标载入
+		//LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR
+		LoadLibrarySearchDllLoadDir = 0x00000100,     //@别名 搜索动态库载入目录
+		//LOAD_LIBRARY_SEARCH_APPLICATION_DIR
+		LoadLibrarySearchApplicationDir = 0x00000200, //@别名 搜索应用程序目录
+		//LOAD_LIBRARY_SEARCH_USER_DIRS
+		LoadLibrarySearchUserDirs = 0x00000400,		  //@别名 搜索用户目录
+		//LOAD_LIBRARY_SEARCH_SYSTEM32
+		LoadLibrarySearchSystem32 = 0x00000800,		  //@别名 搜索系统32目录
+		//LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
+		LoadLibrarySearchDefaultDirs = 0x00001000,	  //@别名 搜索默认目录
+		//LOAD_LIBRARY_SAFE_CURRENT_DIRS
+		LoadLibrarySafeCurrentDirs = 0x00002000,	  //@别名 安全搜索当前目录
+	};
+
+	//@分组}
+
+	//@分组{［文本］.炫　配置类（ＩＮＩ／注册表）
+
+	//@别名 配置格式
+	enum SettingFormat
+	{
+		InvalidFormat = 0, //@别名 无效格式
+
+		IniFormat, //@别名 INI格式
+		RegistryFormat, //@别名 注册表格式
+	};
+
+	//@分组}
+
+	//@分组{［线程安全］.炫　线程共享锁类
+
+	//@别名 递归模式
+	enum RecursionMode
+	{
+		Recursive, //@别名 递归
+		NonRecursive //@别名 非递归
+	};
+
+	//@分组}
+
+//@分组{［内存安全］.炫　共享内存类
+
+	//@备注 共享内存访问模式枚举
+	//@别名 共享内存访问模式
+	enum SharedMemoryAccessMode
+	{
+		SharedMemoryReadOnly,
+		SharedMemoryReadWrite
+	};
+
+	//@备注 共享内存错误枚举
+	//@别名 共享内存错误
+	enum SharedMemoryError
+	{
+		SharedMemoryNoError,
+		SharedMemoryPermissionDenied,
+		SharedMemoryInvalidSize,
+		SharedMemoryKeyError,
+		SharedMemoryAlreadyExists,
+		SharedMemoryNotFound,
+		SharedMemoryUnknownError
+	};
+
+	//@备注 共享内存版本切换
+	//@别名 共享内存版本
+	enum SharedMemoryVersion
+	{
+		SharedMemoryANSI,
+		SharedMemoryUnicode
+	};
+
+	//@分组}
+
+	//@分组{ ［文件／文件夹］.炫　ＪＳＯＮ类
+
+
+	//@别名 JSON格式
+	enum JsonFormat
+	{
+		JsonIndented, //@别名 缩进
+		JsonCompact   //@别名 紧凑
+	};
+
+	//@分组}
+
+//@分组{［文件／文件夹］.炫　文件对话框类
+
+
+	//@别名 文件对话框接受模式
+	enum FileDialogAcceptMode
+		//@隐藏{
+		: __int64
+		//@隐藏}
+	{
+		//@备註 打开文件
+		OpenFile = 0, //@别名 打开文件
+
+		//@备註 打开目录
+		OpenDirectory, //@别名 打开文件夹
+
+		//@备註 保存文件
+		SaveFile, //@别名 保存文件
+	};
+
+	//@别名 文件对话框标籤
+	enum FileDialogLabel
+		//@隐藏{
+		: __int64
+		//@隐藏}
+	{
+		//@备註 确定按钮标签
+		OkButton, //@别名 确定按钮
+
+		//@备註 文件名标签
+		FileName, //@别名 文件名
+	};
+
+	//@别名 文件对话框选项
+	enum FileDialogOption
+		//@隐藏{
+		: __int64
+		//@隐藏}
+	{
+		//@备註 (0x2) 启用复盖文件时的提示，如果用户选择一个已经存在的文件
+		OverwritePrompt = FOS_OVERWRITEPROMPT, //@别名 启用复盖文件提示
+
+		//@备註 (0x4) 仅显示在文件类型筛选器中指定的文件类型，不显示所有文件
+		StrictFileTypes = FOS_STRICTFILETYPES, //@别名 严格文件类型
+
+		//@备註 (0x8) 不允许改变当前目录
+		NoChangeDirectory = FOS_NOCHANGEDIR, //@别名 禁止改变目录
+
+		//@备註 (0x20) 允许用户选择文件夹而不是文件
+		PickFolders = FOS_PICKFOLDERS, //@别名 允许选择文件夹
+
+		//@备註 (0x40) 强制使用文件系统对话框，而不是自定义对话框
+		ForceFileSystem = FOS_FORCEFILESYSTEM, //@别名 强制文件系统对话框
+
+		//@备註 (0x80) 允许选择所有非存储项目，不仅限于文件系统项目
+		AllNonStorageItems = FOS_ALLNONSTORAGEITEMS, //@别名 允许所有非存储项
+
+		//@备註 (0x100) 不验证用户输入的文件名或路径
+		NoValidate = FOS_NOVALIDATE, //@别名 禁止验证
+
+		//@备註 (0x200) 允许用户选择多个文件
+		AllowMultiSelect = FOS_ALLOWMULTISELECT, //@别名 允许多选
+
+		//@备註 (0x800) 路径必须存在
+		PathMustExist = FOS_PATHMUSTEXIST, //@别名 路径必须存在
+
+		//@备註 (0x1000) 文件必须存在
+		FileMustExist = FOS_FILEMUSTEXIST, //@别名 文件必须存在
+
+		//@备註 (0x2000) 显示创建文件的提示，当用户指定的文件不存在时
+		CreatePrompt = FOS_CREATEPROMPT, //@别名 创建文件提示
+
+		//@备註 (0x4000) 文件对话框应该检查是否有其他应用程序已经打开了所选文件
+		ShareAware = FOS_SHAREAWARE, //@别名 共享感知
+
+		//@备註 (0x8000) 不允许选择只读文件
+		NoReadOnlyReturn = FOS_NOREADONLYRETURN, //@别名 禁止只读返回
+
+		//@备註 (0x10000) 不测试文件的创建能力
+		NoTestFileCreate = FOS_NOTESTFILECREATE, //@别名 禁止测试文件创建
+
+		//@备註 (0x20000) 隐藏最近访问的位置
+		HideMRUPlaces = FOS_HIDEMRUPLACES, //@别名 隐藏最近访问位置
+
+		//@备註 (0x40000) 隐藏固定的位置
+		HidePinnedPlaces = FOS_HIDEPINNEDPLACES, //@别名 隐藏固定位置
+
+		//@备註 (0x100000) 不解析shell链接
+		NoDereferenceLinks = FOS_NODEREFERENCELINKS, //@别名 禁止解析链接
+
+		//@备註 (0x200000) 需要与确定文件名按钮进行交互
+		OkButtonNeedsInteraction = FOS_OKBUTTONNEEDSINTERACTION, //@别名 需要确定文件名按钮交互
+
+		//@备註 (0x2000000) 不将文件添加到最近文件列表中
+		DontAddToRecent = FOS_DONTADDTORECENT, //@别名 不添加到最近文件列表
+
+		//@备註 (0x10000000) 强制显示隐藏文件和文件夹
+		ForceShowHidden = FOS_FORCESHOWHIDDEN, //@别名 强制显示隐藏文件
+
+		//@备註 (0x20000000) 默认情况下不以最小模式打开
+		DefaultNoMinimode = FOS_DEFAULTNOMINIMODE, //@别名 默认不以最小模式打开
+
+		//@备註 (0x40000000) 强制显示预览面板
+		ForcePreviewPaneOn = FOS_FORCEPREVIEWPANEON, //@别名 强制显示预览面板
+
+		//@备註 (0x80000000) 支持可流式传输的项目
+		SupportStreamableItems = FOS_SUPPORTSTREAMABLEITEMS, //@别名 支持可流式传输项目
+
+		//@备註 默认打开文件
+		// 复盖提示(0x2) | 严格文件类型(0x4) | 路径必须存在(0x8000) 的组合
+		DefaultOpenFile = FOS_OVERWRITEPROMPT | FOS_STRICTFILETYPES | FOS_PATHMUSTEXIST, //@别名 默认打开文件
+
+		//@备註 默认保存文件
+		// 复盖提示(0x2) | 文件必须存在(0x1000) | 严格文件类型(0x4) | 路径必须存在(0x8000) 的组合
+		DefaultSaveFile = FOS_OVERWRITEPROMPT | FOS_FILEMUSTEXIST | FOS_STRICTFILETYPES | FOS_PATHMUSTEXIST, //@别名 默认保存文件
+
+		//@备註 默认打开文件夹，包括文件夹选择和路径必须存在
+		// 允许选择文件夹(0x20) | 路径必须存在(0x8000) 的组合
+		DefaultOpenDirectory = FOS_PICKFOLDERS | FOS_PATHMUSTEXIST //@别名 默认打开文件夹
+	};
+
+	//@隐藏{
+	CXX_DECLARE_FLAGS(FileDialogOptions, FileDialogOption);
+	//@隐藏}
+#pragma endregion
+
 
 }
 

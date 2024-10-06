@@ -34,50 +34,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@别名 炫
 namespace cxx
 {
-	//@分组{［其他］.炫　动态库类
 
-	//@别名 炫調用約定
-	enum CallingConvention
-	{
-		StdCall,	 //@别名 标准调用约定
-		Cdecl,		 //@别名 C调用约定
-		FastCall,   //@别名 快速调用约定
-		ThisCall,   //@别名 类成员调用约定
-		VectorCall, //@别名 向量调用约定
-	};
-
-	//@别名 炫库标志
-	enum LibraryFlags
-	{
-		//DONT_RESOLVE_DLL_REFERENCES
-		DontResolveDllReferences = 0x00000001,		  //@别名 不解析动态库引用
-		//LOAD_LIBRARY_AS_DATAFILE
-		LoadLibraryAsDataFile = 0x00000002,			  //@别名 作为数据文件载入
-		//LOAD_WITH_ALTERED_SEARCH_PATH
-		LoadWithAlteredSearchPath = 0x00000008,		  //@别名 使用更改的搜索路径载入
-		//LOAD_IGNORE_CODE_AUTHZ_LEVEL
-		LoadIgnoreCodeAuthzLevel = 0x00000010,		  //@别名 忽略代码授权级别
-		//LOAD_LIBRARY_AS_IMAGE_RESOURCE 
-		LoadLibraryAsImageResource = 0x00000020,	  //@别名 作为图像资源载入
-		//LOAD_LIBRARY_AS_DATAFILE_EXCLUSIVE
-		LoadLibraryAsDataFileExclusive = 0x00000040,  //@别名 作为独占数据文件载入
-		//LOAD_LIBRARY_REQUIRE_SIGNED_TARGET 
-		LoadLibraryRequireSignedTarget = 0x00000080,  //@别名 要求签名目标载入
-		//LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR
-		LoadLibrarySearchDllLoadDir = 0x00000100,     //@别名 搜索动态库载入目录
-		//LOAD_LIBRARY_SEARCH_APPLICATION_DIR
-		LoadLibrarySearchApplicationDir = 0x00000200, //@别名 搜索应用程序目录
-		//LOAD_LIBRARY_SEARCH_USER_DIRS
-		LoadLibrarySearchUserDirs = 0x00000400,		  //@别名 搜索用户目录
-		//LOAD_LIBRARY_SEARCH_SYSTEM32
-		LoadLibrarySearchSystem32 = 0x00000800,		  //@别名 搜索系统32目录
-		//LOAD_LIBRARY_SEARCH_DEFAULT_DIRS
-		LoadLibrarySearchDefaultDirs = 0x00001000,	  //@别名 搜索默认目录
-		//LOAD_LIBRARY_SAFE_CURRENT_DIRS
-		LoadLibrarySafeCurrentDirs = 0x00002000,	  //@别名 安全搜索当前目录
-	};
-
-	//@分组}
 }
 
 //@分组{［其他］.炫　动态库类

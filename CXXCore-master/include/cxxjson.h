@@ -30,19 +30,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <iostream>
 #include <stdexcept>
 
+//@别名 炫
 namespace cxx
 {
-	//@分组{ ［文件／文件夹］.炫　ＪＳＯＮ类
 
-
-	//@别名 JSON格式
-	enum JsonFormat
-	{
-		JsonIndented, //@别名 缩进
-		JsonCompact   //@别名 紧凑
-	};
-
-	//@分组}
 }
 
 //@分组{ ［文件／文件夹］.炫　ＪＳＯＮ类

@@ -30,16 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@别名 炫
 namespace cxx
 {
-	//@分组{［线程安全］.炫　线程共享锁类
 
-	//@别名 递归模式
-	enum RecursionMode
-	{
-		Recursive, //@别名 递归
-		NonRecursive //@别名 非递归
-	};
-
-	//@分组}
 }
 
 //@分组{［线程安全］.炫　线程共享锁类

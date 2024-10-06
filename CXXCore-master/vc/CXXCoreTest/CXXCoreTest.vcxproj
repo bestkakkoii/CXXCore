@@ -315,8 +315,8 @@
     <ClInclude Include="..\..\include\pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\CHANGELOG.md" />
-    <None Include="..\..\README.md" />
+    <None Include="..\..\..\CHANGELOG.md" />
+    <None Include="..\..\..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

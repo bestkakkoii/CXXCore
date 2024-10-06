@@ -36,58 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@别名 炫
 namespace cxx
 {
-	//@分组{［文本］.炫　加密类
 
-	//@别名 哈希算法类型
-	enum HashAlgorithm
-	{
-		MD2,
-		MD4,
-		MD5,
-		SHA1,
-		SHA256,
-		SHA384,
-		SHA512
-	};
-
-	//@别名 加密算法类型
-	enum CryptAlgorithm
-	{
-		RSA,
-		RSA_SIGN,
-		DH,
-		DSA,
-		RC2,
-		RC4,
-		AES,
-		DES,
-		DESX,
-		TripleDES,
-		TripleDES_112,
-		AES_GMAC,
-		AES_CMAC,
-		ECDSA_P256,
-		ECDSA_P384,
-		ECDSA_P521,
-		ECDH_P256,
-		ECDH_P384,
-		ECDH_P521,
-		RNG_FIPS186_DSA,
-		RNG_DUAL_EC
-	};
-
-	//@别名 链模式
-	enum ChainMode
-	{
-		NA,
-		CBC,
-		ECB,
-		CFB,
-		CCM,
-		GCM
-	};
-
-	//@分组}
 }
 
 //@分组{［文本］.炫　加密类

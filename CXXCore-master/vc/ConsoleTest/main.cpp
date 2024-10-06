@@ -9,7 +9,8 @@ struct Test
 
 int main()
 {
-	CXXDebug() << CXXString(L"AAAAAa");
+	int a = 0;
+	CXXDebug() << &a;
 	cxxPrint() << CXXString(L"AAAAAa");
 
 	cxx::pauseConsole();

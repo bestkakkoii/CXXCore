@@ -32,38 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@别名 炫
 namespace cxx
 {
-	//@分组{［内存安全］.炫　共享内存类
 
-	//@备注 共享内存访问模式枚举
-	//@别名 共享内存访问模式
-	enum SharedMemoryAccessMode
-	{
-		SharedMemoryReadOnly,
-		SharedMemoryReadWrite
-	};
-
-	//@备注 共享内存错误枚举
-	//@别名 共享内存错误
-	enum SharedMemoryError
-	{
-		SharedMemoryNoError,
-		SharedMemoryPermissionDenied,
-		SharedMemoryInvalidSize,
-		SharedMemoryKeyError,
-		SharedMemoryAlreadyExists,
-		SharedMemoryNotFound,
-		SharedMemoryUnknownError
-	};
-
-	//@备注 共享内存版本切换
-	//@别名 共享内存版本
-	enum SharedMemoryVersion
-	{
-		SharedMemoryANSI,
-		SharedMemoryUnicode
-	};
-
-	//@分组}
 
 }
 

@@ -549,10 +549,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\CHANGELOG.md">
+    <None Include="..\..\..\CHANGELOG.md">
       <Filter>include</Filter>
     </None>
-    <None Include="..\..\README.md">
+    <None Include="..\..\..\README.md">
       <Filter>include</Filter>
     </None>
   </ItemGroup>

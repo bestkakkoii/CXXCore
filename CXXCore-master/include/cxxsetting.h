@@ -33,18 +33,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@别名 炫
 namespace cxx
 {
-	//@分组{［文本］.炫　配置类（ＩＮＩ／注册表）
 
-	//@别名 配置格式
-	enum SettingFormat
-	{
-		InvalidFormat = 0, //@别名 无效格式
-
-		IniFormat, //@别名 INI格式
-		RegistryFormat, //@别名 注册表格式
-	};
-
-	//@分组}
 }
 
 //@分组{［文本］.炫　配置类（ＩＮＩ／注册表）
