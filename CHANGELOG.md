@@ -1,5 +1,17 @@
 ﻿## 更新日志
 
+#### [2024-10-07]()
+  * 修改 在 `cxxwintoast.h` 中新增 `CXXToastResultCallback` 的 `typedef` 和相关註释。
+    * 在 `cxxwritelocker.h` 中将析构函数改为虚拟函数。
+    * 在 `cxxcom.cpp` 中将函数名称改为 `get`。
+    * 在 `cxxdir.cpp` 中新增目录重命名函数。
+    * 在 `cxxfile.cpp` 中新增析构函数清理代码，并更新路径。
+    * 在 `cxxfile.cpp` 中对 `map` 和 `unmap` 函数增加互斥锁。
+    * 在 `cxxfiledialog.cpp` 中重命名函数并移除重複代码。
+    * 在 `cxxmutex.cpp` 中修改参数类型。
+    * 在 `cxxscopedhandle.cpp` 中新增获取句柄函数。
+    * 在 `cxxstring.cpp` 和 `cxxvariant.cpp` 中更新註释别名。
+
 #### [2024-10-06]()
   * 修改 应对 IDE 总是出现命名空间解析 BUG，将所有命名空间的枚举移至核心模块
 
