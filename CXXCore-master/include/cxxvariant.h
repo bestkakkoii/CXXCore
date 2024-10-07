@@ -251,15 +251,15 @@ public:
 	cxx::DataType type() const;
 
 	//@备註 转到换逻辑
-	//@别名 到逻辑型()
+	//@别名 到逻辑()
 	bool toBool() const;
 
 	//@备註 转换到有符号8位整数
-	//@别名 到字符型A()
+	//@别名 到字符A()
 	char toChar() const;
 
 	//@备註 转换到无符号8位整数
-	//@别名 到字节型()
+	//@别名 到字节()
 	BYTE toUChar() const;
 
 	//@备註 转换到有符号16位整数
@@ -287,11 +287,11 @@ public:
 	UINT64 toULongLong() const;
 
 	//@备註 转换到单精度浮点数
-	//@别名 到浮点型()
+	//@别名 到浮点()
 	float toFloat() const;
 
 	//@备註 转换到双精度浮点数
-	//@别名 到双浮点型()
+	//@别名 到双浮点()
 	double toDouble() const;
 
 	//@备註 转换到宽字符串

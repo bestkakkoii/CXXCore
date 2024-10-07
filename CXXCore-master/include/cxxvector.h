@@ -1350,7 +1350,7 @@ public:
 
 	//@备注 转换StdString
 	//@返回 字符串
-	//@别名 到字符串()
+	//@别名 到STDSTRING()
 	std::string toStdString() const
 	{
 		return std::string(reinterpret_cast<const char*>(data()), static_cast<size_t>(size()));

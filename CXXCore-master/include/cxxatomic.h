@@ -435,9 +435,8 @@ private:
 
 //@备注 Win32/x64 自适应
 typedef CXXAtomic<intptr_t> CXXAtomicInt;	 //@别名 原子整数型
-
 //@备注 Win32/x64 自适应
-typedef CXXAtomic<size_t> CXXAtomicUInt;	 //@别名 原子正整数型.0
+typedef CXXAtomic<size_t> CXXAtomicUInt;	 //@别名 原子正整数型
 
 typedef CXXAtomic<char> CXXAtomicInt8;		 //@别名 原子字符型A
 typedef CXXAtomic<wchar_t> CXXAtomicWInt16;  //@别名 原子字符型

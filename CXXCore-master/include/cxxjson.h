@@ -124,7 +124,7 @@ public:
 	//@备注 检查当前JSON对象是否为逻辑型
 	//@参数 无
 	//@返回 逻辑型
-	//@别名 是否逻辑型()
+	//@别名 是否逻辑()
 	bool isBool() const
 	{
 		return CXXJsonObject::is_boolean();
@@ -133,7 +133,7 @@ public:
 	//@备注 检查当前JSON对象是否为双浮点型
 	//@参数 无
 	//@返回 逻辑型
-	//@别名 是否双浮点型()
+	//@别名 是否双浮点()
 	bool isDouble() const
 	{
 		return CXXJsonObject::is_number_float();
@@ -183,7 +183,7 @@ public:
 	//@备注 将当前JSON对象转换为 逻辑型
 	//@参数 无
 	//@返回 逻辑型
-	//@别名 到逻辑型()
+	//@别名 到逻辑()
 	bool toBool(bool defaultValue = false) const
 	{
 		if (!isBool())
@@ -197,7 +197,7 @@ public:
 	//@备注 将当前JSON对象转换为 双浮点型
 	//@参数 无
 	//@返回 双浮点型
-	//@别名 到双浮点型()
+	//@别名 到双浮点()
 	double toDouble(double defaultValue = 0.0) const
 	{
 		if (!isDouble())
@@ -428,7 +428,7 @@ public:
 
 	const CXXJson& operator[](const CXXString& key) const
 	{
-		std::string str = key.toUtf8();
+		const std::string str = key.toUtf8();
 		return CXXJsonObject::at(str);
 	}
 
@@ -440,7 +440,7 @@ public:
 
 	const CXXJson& operator[](const wchar_t* key) const
 	{
-		std::string str = CXXString(key).toUtf8();
+		const std::string str = CXXString(key).toUtf8();
 		return CXXJsonObject::at(str);
 	}
 
@@ -452,7 +452,7 @@ public:
 
 	const CXXJson& operator[](wchar_t* key) const
 	{
-		std::string str = CXXString(key).toUtf8();
+		const std::string str = CXXString(key).toUtf8();
 		return CXXJsonObject::at(str);
 	}
 

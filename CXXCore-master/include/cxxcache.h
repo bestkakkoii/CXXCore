@@ -51,7 +51,6 @@ public:
 	}
 
 	//@备注 析构函数，清理缓存中所有对象，释放内存。
-	//@别名 析构 ()
 	virtual ~CXXCache()
 	{
 		clear();

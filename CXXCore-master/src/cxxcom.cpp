@@ -396,8 +396,13 @@ CXXString CXXComVariant::typeName() const
 	return it->second;
 }
 
-//@别名 数据指针()
 void* CXXComVariant::data()
+{
+	CXX_D(CXXComVariant);
+	return reinterpret_cast<void*>(&d->result_);
+}
+
+void* CXXComVariant::get()
 {
 	CXX_D(CXXComVariant);
 	return reinterpret_cast<void*>(&d->result_);

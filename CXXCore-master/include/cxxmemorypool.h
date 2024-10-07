@@ -81,9 +81,7 @@ class CXXMemoryPool
 	CXX_DISABLE_COPY_MOVE(CXXMemoryPool);
 	//@隐藏}
 public:
-	//@隐藏{
 	virtual ~CXXMemoryPool();
-	//@隐藏}
 
 public:
 	//@备注 申请内存
@@ -153,7 +151,7 @@ public:
 	{
 		assert(p_ != CXX_NULLPTR);
 	}
-	~CXXScopedMemoryPool() { CXXScopedMemoryPool::getInstance().free(p_, size_); }
+	virtual ~CXXScopedMemoryPool() { CXXScopedMemoryPool::getInstance().free(p_, size_); }
 
 	//@备注 获取已申请到的内存
 	//@参数 无

@@ -93,7 +93,7 @@ public:
 
 	CXXString(CXXString&& other) noexcept;
 
-	~CXXString();
+	virtual ~CXXString();
 
 	//@隐藏{
 	operator const wchar_t* () const;
@@ -218,7 +218,7 @@ public:
 
 	//@备注 返回文本的常量数据指针
 	//@返回 char16_t指针
-	//
+	//@别名 UTF16()
 	char16_t* utf16();
 
 	//@备注 返回文本的常量短整型数据指针

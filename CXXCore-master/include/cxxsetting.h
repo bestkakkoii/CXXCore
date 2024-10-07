@@ -51,9 +51,7 @@ public:
 	//@参数 format: 格式
 	CXXSetting(const CXXString& fullPath, cxx::SettingFormat format);
 
-	//@隐藏{
-	~CXXSetting();
-	//@隐藏}
+	virtual ~CXXSetting();
 
 	//@参数 清空INI指定键的值或者清空注册表指定键的值
 	//@别名 删除值(值名)

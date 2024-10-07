@@ -67,7 +67,7 @@ bool CXXMutex::tryLock()
 	return locked;
 }
 
-bool CXXMutex::tryLockFor(UINT duration)
+bool CXXMutex::tryLockFor(__int64 duration)
 {
 	std::chrono::system_clock::time_point start = std::chrono::system_clock::now();
 	std::chrono::system_clock::time_point end = start + std::chrono::milliseconds(duration);

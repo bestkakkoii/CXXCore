@@ -49,9 +49,7 @@ public:
 		//@隐藏}
 		;
 
-	//@隐藏{
 	virtual ~CXXMutexLocker();
-	//@隐藏}
 
 	//@备注 是否锁定
 	//@参数 无

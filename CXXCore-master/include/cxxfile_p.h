@@ -40,6 +40,7 @@ private:
 	FILE* file_ = CXX_NULLPTR;
 	cxx::FileOpenMode openMode_ = cxx::ReadWrite;
 	std::vector<std::unique_ptr<BYTE[]>> mappedData_;
+	std::mutex mutex_;
 
 private:
 	CXX_DECLARE_PUBLIC(CXXFile);

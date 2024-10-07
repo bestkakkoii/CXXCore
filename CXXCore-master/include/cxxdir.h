@@ -32,6 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 class CXXDirPrivate;
 //@隐藏}
 
+//@备注 用于管理文件夹、及文件夹操作
 //@别名 炫文件夹
 class CXXDir
 {
@@ -94,6 +95,12 @@ public:
 	//@别名 移除()
 	bool remove();
 
+	//@备注 重命名文件夹
+	//@参数 新文件夹名称
+	//@返回 是否成功
+	//@别名 重命名(新文件夹名称)
+	bool rename(const CXXString& newName);
+
 public:
 	//@备注 获取系统暂存目录
 	//@返回 临时目录
@@ -148,7 +155,14 @@ public:
 	//@参数 文件夹路径
 	//@返回 是否成功
 	//@别名 当前工作目录(文件夹路径)
-	static CXXString  currentDir();
+	static CXXString currentDir();
+
+	//@备注 静态:重命名文件夹
+	//@参数 旧文件夹名称
+	//@参数 新文件夹名称
+	//@返回 是否成功
+	//@别名 重命名(旧文件夹名称, 新文件夹名称)
+	static bool rename(const CXXString& oldName, const CXXString& newName);
 
 public:
 	//@隐藏{

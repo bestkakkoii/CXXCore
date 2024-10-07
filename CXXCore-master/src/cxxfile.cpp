@@ -209,6 +209,11 @@ CXXFile::CXXFile(const CXXString& path, cxx::FileOpenMode type, bool isShared)
 CXXFile::~CXXFile()
 {
 	close();
+
+	{
+		std::lock_guard<std::mutex> lock(d_ptr->mutex_);
+		d_ptr->mappedData_.clear();
+	}
 }
 
 bool CXXFile::open(cxx::FileOpenMode type, bool isShared)
@@ -290,7 +295,13 @@ bool CXXFile::rename(const CXXString& newpath)
 	{
 		return false;
 	}
-	return CXXFile::rename(d_ptr->path_, newpath);
+	bool ret = CXXFile::rename(d_ptr->path_, newpath);
+	if (ret)
+	{
+		d_ptr->path_ = newpath;
+	}
+
+	return ret;
 }
 
 bool CXXFile::remove()
@@ -612,14 +623,12 @@ BYTE* CXXFile::map(__int64 offset, __int64 size)
 		fileHandle = CreateFileW(d_ptr->path_.c_str(), GENERIC_READ, FILE_SHARE_READ, CXX_NULLPTR, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, CXX_NULLPTR);
 		if (fileHandle == INVALID_HANDLE_VALUE)
 		{
-			std::cerr << "Failed to open file for mapping." << std::endl;
 			break;
 		}
 
 		mappingHandle = CreateFileMappingW(fileHandle, CXX_NULLPTR, PAGE_READONLY, 0, 0, CXX_NULLPTR);
 		if (mappingHandle == CXX_NULLPTR)
 		{
-			std::cerr << "Failed to create file mapping." << std::endl;
 			break;
 		}
 
@@ -628,13 +637,13 @@ BYTE* CXXFile::map(__int64 offset, __int64 size)
 
 		if (viewPtr == CXX_NULLPTR)
 		{
-			std::cerr << "Failed to map view of file." << std::endl;
 			break;
 		}
 
 		std::unique_ptr<BYTE[]> buffer(new BYTE[static_cast<size_t>(size)]());
 		if (buffer != CXX_NULLPTR)
 		{
+			std::lock_guard<std::mutex> lock(d_ptr->mutex_);
 			memmove_s(buffer.get(), static_cast<rsize_t>(size), viewPtr, static_cast<rsize_t>(size));
 			d_ptr->mappedData_.push_back(std::move(buffer));
 			UnmapViewOfFile(viewPtr);
@@ -656,13 +665,15 @@ BYTE* CXXFile::map(__int64 offset, __int64 size)
 
 void CXXFile::unmap(BYTE* ptr)
 {
-	for (auto it = d_ptr->mappedData_.begin(); it != d_ptr->mappedData_.end(); ++it)
-	{
-		if (it->get() == reinterpret_cast<BYTE*>(ptr))
+	std::lock_guard<std::mutex> lock(d_ptr->mutex_);
+	auto it = std::find_if(d_ptr->mappedData_.begin(), d_ptr->mappedData_.end(), [ptr](const std::unique_ptr<BYTE[]>& buffer)
 		{
-			d_ptr->mappedData_.erase(it);
-			break;
-		}
+			return buffer.get() == ptr;
+		});
+
+	if (it != d_ptr->mappedData_.end())
+	{
+		d_ptr->mappedData_.erase(it);
 	}
 }
 

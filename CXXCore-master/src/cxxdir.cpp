@@ -212,6 +212,18 @@ bool CXXDir::remove()
 	return RemoveDirectoryW(reinterpret_cast<LPCWSTR>(d->fullPath_.toStdWString().c_str())) != 0;
 }
 
+bool CXXDir::rename(const CXXString& newName)
+{
+	CXX_D(CXXDir);
+	bool ret = MoveFileW(reinterpret_cast<LPCWSTR>(d->fullPath_.toStdWString().c_str()), reinterpret_cast<LPCWSTR>(newName.toStdWString().c_str())) != 0;
+	if (ret)
+	{
+		d->processPath(newName);
+	}
+
+	return ret;
+}
+
 bool CXXDir::operator!=(const CXXDir& dir) const
 {
 	CXX_D(const CXXDir);
@@ -384,4 +396,9 @@ CXXString CXXDir::currentDir()
 	wchar_t buffer[MAX_PATH] = {};
 	GetCurrentDirectoryW(MAX_PATH, buffer);
 	return CXXString(buffer);
+}
+
+bool CXXDir::rename(const CXXString& oldName, const CXXString& newName)
+{
+	return MoveFileW(oldName.c_str(), newName.c_str()) != 0;
 }

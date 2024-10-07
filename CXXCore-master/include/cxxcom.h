@@ -123,6 +123,9 @@ public:
 	//@别名 地址()
 	void* data();
 
+	//@别名 取()
+	void* get();
+
 	//@隐藏{
 	template<typename... Args>
 	CXXComVariant invoke(const CXXString& methodName, Args&&... args)

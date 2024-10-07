@@ -725,41 +725,38 @@ void CXXFileDialog::setFileMode(cxx::FileDialogAcceptMode mode)
 	d->fileMode_ = mode;
 }
 
-namespace cxx
+CXXVector<CXXString> cxxCreateOpenFileDialog(const CXXString& directory, const CXXString& caption, HWND parent)
 {
-	CXXVector<CXXString> createOpenFileDialog(const CXXString& directory, const CXXString& caption, HWND parent)
+	static CXXVector<CXXString> empty;
+	CXXFileDialog dialog(cxx::FileDialogAcceptMode::OpenFile, parent, caption, directory);
+	if (dialog.exec())
 	{
-		static CXXVector<CXXString> empty;
-		CXXFileDialog dialog(cxx::FileDialogAcceptMode::OpenFile, parent, caption, directory);
-		if (dialog.exec())
-		{
-			return dialog.selectedFiles();
-		}
-
-		return empty;
+		return dialog.selectedFiles();
 	}
 
-	CXXVector<CXXString> createOpenDirectoryDialog(const CXXString& directory, const CXXString& caption, HWND parent)
-	{
-		static CXXVector<CXXString> empty;
-		CXXFileDialog dialog(cxx::FileDialogAcceptMode::OpenDirectory, parent, caption, directory);
-		if (dialog.exec())
-		{
-			return dialog.selectedFiles();
-		}
+	return empty;
+}
 
-		return empty;
+CXXVector<CXXString> cxxCreateOpenDirectoryDialog(const CXXString& directory, const CXXString& caption, HWND parent)
+{
+	static CXXVector<CXXString> empty;
+	CXXFileDialog dialog(cxx::FileDialogAcceptMode::OpenDirectory, parent, caption, directory);
+	if (dialog.exec())
+	{
+		return dialog.selectedFiles();
 	}
 
-	CXXVector<CXXString> createSaveFileDialog(const CXXString& directory, const CXXString& caption, HWND parent)
-	{
-		static CXXVector<CXXString> empty;
-		CXXFileDialog dialog(cxx::FileDialogAcceptMode::SaveFile, parent, caption, directory);
-		if (dialog.exec())
-		{
-			return dialog.selectedFiles();
-		}
+	return empty;
+}
 
-		return empty;
+CXXVector<CXXString> cxxCreateSaveFileDialog(const CXXString& directory, const CXXString& caption, HWND parent)
+{
+	static CXXVector<CXXString> empty;
+	CXXFileDialog dialog(cxx::FileDialogAcceptMode::SaveFile, parent, caption, directory);
+	if (dialog.exec())
+	{
+		return dialog.selectedFiles();
 	}
+
+	return empty;
 }

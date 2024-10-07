@@ -561,7 +561,7 @@ double CXXVariant::toDouble() const { return value<double>(); }
 CXXString CXXVariant::toString() const { return value<CXXString>(); }
 
 //@备註 转换到指针
-//@别名 到指针型()
+//@别名 到指针()
 void* CXXVariant::toVoidStar() const { return value<void*>(); }
 
 bool CXXVariant::operator==(const CXXVariant& other) const

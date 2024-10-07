@@ -42,11 +42,11 @@ namespace cxx
 //@分组{［文本］.炫　加密类
 
 //@隐藏{
-typedef PVOID BCRYPT_HANDLE;
-typedef PVOID BCRYPT_ALG_HANDLE;
-typedef PVOID BCRYPT_KEY_HANDLE;
-typedef PVOID BCRYPT_HASH_HANDLE;
-typedef PVOID BCRYPT_SECRET_HANDLE;
+using BCRYPT_HANDLE = PVOID;
+using BCRYPT_ALG_HANDLE = PVOID;
+using BCRYPT_KEY_HANDLE = PVOID;
+using BCRYPT_HASH_HANDLE = PVOID;
+using BCRYPT_SECRET_HANDLE = PVOID;
 //@隐藏}
 
 //@别名 炫哈希算法器
@@ -89,7 +89,7 @@ private:
 class CXXCryptoPrivate;
 //@隐藏}
 
-//@备注 文字或字节集加解密
+//@备注 基于微软 BCrypt API 文字或字节集(二进制数据)加解密
 // AES的密钥和数据 必须是16字节的倍数，假设不是则内部会自动使用 PKCS7 填充
 // DES的密钥和数据 必须是8字节的倍数，假设不是则内部会自动使用 PKCS7 填充
 //@别名 炫加密

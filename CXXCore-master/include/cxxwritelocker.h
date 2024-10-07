@@ -44,7 +44,7 @@ public:
 		pLock_->lockForWrite();
 	}
 
-	~CXXWriteLocker()
+	virtual ~CXXWriteLocker()
 	{
 		if (CXX_NULLPTR == pLock_)
 		{

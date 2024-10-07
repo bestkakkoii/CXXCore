@@ -84,6 +84,7 @@ public:
 	//@别名 全局匹配(文本)
 	CXXRegexMatchIterator globalMatch(const CXXString& text) const;
 
+	//@别名 裸()
 	std::wregex raw() const;
 
 private:

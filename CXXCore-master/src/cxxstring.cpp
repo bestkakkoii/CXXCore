@@ -2064,7 +2064,7 @@ CXXVector<BYTE> CXXString::toByteArray() const
 //@备注 将文本转换为单精度浮点数
 //@参数 ok 接收转换是否成功的指针
 //@返回 转换后的单精度浮点数
-//@别名 到浮点数(成功指针)
+//@别名 到浮点(成功指针)
 float CXXString::toFloat(bool* ok) const
 {
 	CXX_D(const CXXString);
@@ -2074,7 +2074,7 @@ float CXXString::toFloat(bool* ok) const
 //@备注 将文本转换为双精度浮点数
 //@参数 ok 接收转换是否成功的指针
 //@返回 转换后的双精度浮点数
-//@别名 到双浮点数(成功指针)
+//@别名 到双浮点(成功指针)
 double CXXString::toDouble(bool* ok) const
 {
 	CXX_D(const CXXString);

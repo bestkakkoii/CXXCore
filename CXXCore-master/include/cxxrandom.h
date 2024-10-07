@@ -43,10 +43,10 @@ namespace cxx
 class CXXRandom
 {
 public:
-	//@隐藏{
 	CXXRandom();
-	//@隐藏}
 	CXXRandom(cxx::RandomGeneratorsType deviceType);
+
+	virtual ~CXXRandom() = default;
 
 	//@备注 取指定类型指定最大到最小值之间的随机数
 	//@参数 min 最小值
@@ -83,23 +83,23 @@ public:
 	//@备注 取指定最大到最小值之间的随机数双精度浮点数
 	//@参数 min 最小值
 	//@参数 max 最大值
-	//@别名 到双浮点型(最小值, 最大值)
+	//@别名 到双浮点(最小值, 最大值)
 	double toDouble(double min, double max);
 
 	//@备注 取指定最大到 0 之间的随机数双精度浮点数
 	//@参数 max 最大值
-	//@别名 到双浮点型(最大值)
+	//@别名 到双浮点(最大值)
 	double toDouble(double max);
 
 	//@备注 取浮点数最小到最大值之间的随机数
 	//@参数 无
-	//@别名 到双浮点型()
+	//@别名 到双浮点()
 	double toDouble();
 
 	//@备注 取浮点数最小到最大值之间的随机数
 	//@参数 min 最小值
 	//@参数 max 最大值
-	//@别名 到浮点型(最小值, 最大值)
+	//@别名 到浮点(最小值, 最大值)
 	float toFloat(float min, float max);
 
 	//@备注 取浮点数最大到 0 之间的随机数
@@ -109,12 +109,12 @@ public:
 
 	//@备注 取浮点数最小到最大值之间的随机数
 	//@参数 无
-	//@别名 到浮点型()
+	//@别名 到浮点()
 	float toFloat();
 
 	//@备注 取概率各为 N% 得真 或 假 逻辑型
 	//@参数 概率(可选) 默认为 0.5
-	//@别名 到逻辑型()
+	//@别名 到逻辑()
 	bool toBool(double probability = 0.5);
 
 	//@备注 取随机数

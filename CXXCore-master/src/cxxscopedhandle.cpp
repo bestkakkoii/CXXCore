@@ -91,6 +91,13 @@ CXXScopedHandle::operator HANDLE()
 	return d->handle_.load(std::memory_order_acquire);
 }
 
+HANDLE CXXScopedHandle::data() const
+{
+	CXX_D(const CXXScopedHandle);
+	return d->handle_.load(std::memory_order_acquire);
+}
+
+
 //@备注 获取句柄，使用此函数不会增加引用计数
 //@参数 无
 //@返回 句柄

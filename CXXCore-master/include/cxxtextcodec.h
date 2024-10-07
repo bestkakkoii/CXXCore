@@ -99,10 +99,9 @@ class CXXTextCodecPrivate;
 class CXXTextCodec
 {
 public:
-	//@隐藏{
 	CXXTextCodec();
 	explicit CXXTextCodec(__int64 acp);
-	//@隐藏}
+	virtual ~CXXTextCodec() = default;
 
 	//@备注 从ACP获取文本编码器的实例指针
 	//@参数 ACP

@@ -42,6 +42,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 namespace cxx
 {
 	//@分组{［线程安全］.炫　线程类
+
 	//@别名 任务结果状态
 	enum FutureStatus
 		//@隐藏{
@@ -496,7 +497,8 @@ public:
 
 /*@声明
 
-@别名 炫异步
+//@备注 用于执行单一异步任务并返回结果
+//@别名 炫异步
 class CXXAsync
 {
 public:
@@ -525,7 +527,7 @@ public:
 
 */
 
-//@备注 用于管理 CXXAsync 任务结果
+//@备注 用于管理 炫异步(CXXAsync) 任务结果
 //@别名 炫任务结果
 template<typename T>
 class CXXFuture
@@ -658,8 +660,7 @@ private:
 };
 
 
-
-//@备注 用于管理多个cxx::async任务的多个cxx::future结果
+//@备注 用于管理多个 炫异步(CXXAsync) 任务的多个 炫任务结果(CXXFuture<T>)
 //@别名 炫任务结果管理器
 template<typename T>
 class CXXFutureSynchronizer

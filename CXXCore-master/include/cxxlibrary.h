@@ -43,6 +43,7 @@ namespace cxx
 class CXXLibraryPrivate;
 //@隐藏}
 
+//@备注 常用动态库操作
 //@别名 炫动态库
 class CXXLibrary
 {

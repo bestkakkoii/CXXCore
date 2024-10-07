@@ -98,6 +98,84 @@ class CXXVector;
 //@别名 炫_常量表达式
 #define CXX_CONSTEXPR constexpr
 
+//@备注 constexpr
+// 用途: 常量表达式，编译期间计算
+//@别名 炫_常量(类型)
+#define CXX_CONSTEXPRX(x) constexpr x
+
+//@备注 数值u
+//@别名 炫正(数值)
+#define CXX_UNSIGNED(x) x##U
+
+//@备注 数值i8
+//@别名 炫_整型8(数值)
+#define CXX_INT8(x) x##i8
+
+//@备注 数值i16
+//@别名 炫_整型16(数值)
+#define CXX_INT16(x) x##i16
+
+//@备注 数值i32
+//@别名 炫_整型32(数值)
+#define CXX_INT32(x) x##i32
+
+//@备注 数值i64
+//@别名 炫_整型64(数值)
+#define CXX_INT64(x) x##i64
+
+//@备注 数值ui8
+//@别名 炫_正整型8(数值)
+#define CXX_UINT8(x) x##ui8
+
+//@备注 数值ui16
+//@别名 炫_正整型16(数值)
+#define CXX_UINT16(x) x##ui16
+
+//@备注 数值ui32
+//@别名 炫_正整型32(数值)
+#define CXX_UINT32(x) x##ui32
+
+//@备注 数值ui64
+//@别名 炫_正整型64(数值)
+#define CXX_UINT64(x) x##ui64
+
+//@备注 数值f32
+//@别名 炫_浮點型32(数值)
+#define CXX_FLOAT32(x) x##f32
+
+//@备注 数值f64
+//@别名 炫_浮點型64(数值)
+#define CXX_FLOAT64(x) x##f64
+
+//@备注 数值L
+//@别名 炫_长整型32(数值)
+#define CXX_LONG(x) x##L
+
+//@备注 数值LL
+//@别名 炫_长整型64(数值)
+#define CXX_LONG64(x) x##LL
+
+//@备注 数值UL
+//@别名 炫_正长整型32(数值)
+#define CXX_ULONG(x) x##UL
+
+//@备注 数值ULL
+//@别名 炫_正长整型64(数值)
+#define CXX_ULONG64(x) x##ULL
+
+//@备注 数值z
+//@别名 炫_大小(數值)
+#define CXX_SIZE(x) x##z
+
+//@备注 数值b
+//@别名 炫_八位(數值)
+#define CXX_BYTE(x) x##b
+
+//@备注 u8数值
+//@别名 炫_UTF8(數值)
+#define CXX_UTF8(x) u8##x
+
+
 //@备注 ...
 // 用途: 可变参数
 //@别名 炫_可变参数
@@ -180,6 +258,18 @@ class CXXVector;
 // 参数 value 要转换的值
 //@别名 炫_动态转换
 #define CXX_DYNAMIC_CAST(type, value) dynamic_cast<type>(value)
+
+//@备注 reinterpret_cast
+// 用途: 重新解释转换
+// 炫_重新解释转换
+//@别名 炫_重新解释转换
+#define CXX_REINTERPRET_CAST(type, value) reinterpret_cast<type>()
+
+//@备注 static_cast
+// 用途: 静态转换
+// 炫_静态转换
+//@别名 炫_静态转换
+#define CXX_STATIC_CAST(type, value) static_cast<type>(value)
 
 //@备注 explicit
 // 用途: 显式构造函数
@@ -277,12 +367,6 @@ class CXXVector;
 // 炫_寄存器
 //@别名 炫_寄存器
 #define CXX_REGISTER register
-
-//@备注 reinterpret_cast
-// 用途: 重新解释转换
-// 炫_重新解释转换
-//@别名 炫_重新解释转换
-#define CXX_REINTERPRET_CAST(type, value) reinterpret_cast<type>()
 
 //@备注 signed
 // 用途: 有符号

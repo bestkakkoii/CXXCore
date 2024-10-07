@@ -40,12 +40,19 @@ namespace cxx
 
 //@分组{［其他］.炫　推送通知类
 
+//@隐藏{
+using CXXToastResultCallback = std::function<void(int state, int actionIndex)>;
+//@隐藏}
+
+/*@声明
 //@备注 推送通知结果回调
 // typedef std::function<void(int state, int actionIndex)> CXXToastResultCallback
 //@参数 状态
 //@参数 动作索引
 //@别名 推送通知结果回调(状态, 动作索引)
 typedef std::function<void(int state, int actionIndex)> CXXToastResultCallback;
+*/
+
 
 //@隐藏{
 using CXXToastHandlerBase = WinToastLib::IWinToastHandler;

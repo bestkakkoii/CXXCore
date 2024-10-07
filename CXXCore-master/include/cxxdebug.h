@@ -117,9 +117,9 @@ namespace cxx
 	class NextLine
 	{
 	public:
-		const char data_ = '\n';
-	public:
 		operator const char& () const { return data_; }
+	private:
+		static inline constexpr char data_ = '\n';
 	};
 	//@隐藏}
 
