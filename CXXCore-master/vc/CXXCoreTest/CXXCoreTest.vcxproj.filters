@@ -90,9 +90,6 @@
     <Filter Include="old\cxxmutex">
       <UniqueIdentifier>{f68b746d-1e96-4eee-87c6-00d0bc5b1a41}</UniqueIdentifier>
     </Filter>
-    <Filter Include="old\cxxmemorypool">
-      <UniqueIdentifier>{43d4f465-2a87-4dfe-9c28-be45140139e3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="old\cxxcrypto">
       <UniqueIdentifier>{aa2001bc-3880-4d19-ac1d-7bd235388d04}</UniqueIdentifier>
     </Filter>
@@ -146,6 +143,9 @@
     </Filter>
     <Filter Include="template\cxxsharedpointer">
       <UniqueIdentifier>{338c52cc-a1a1-4fe0-907c-f1636dd2806b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="template\cxxmemorypool">
+      <UniqueIdentifier>{43d4f465-2a87-4dfe-9c28-be45140139e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -204,7 +204,7 @@
       <Filter>old\cxxmutex</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\cxxmemorypool.cpp">
-      <Filter>old\cxxmemorypool</Filter>
+      <Filter>template\cxxmemorypool</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\cxxprocess.cpp">
       <Filter>pimpl\cxxprocess</Filter>
@@ -491,7 +491,7 @@
       <Filter>old\cxxrandom</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\cxxmemorypool.h">
-      <Filter>old\cxxmemorypool</Filter>
+      <Filter>template\cxxmemorypool</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\cxxreadlocker.h">
       <Filter>old\cxxmutex</Filter>
