@@ -327,8 +327,8 @@ public:
 	friend bool operator==(U lhs, const CXXAtomic<T>& rhs) { return (T)lhs == rhs.load(); }
 
 	// !=
-	template<typename U>
-	friend bool operator!=(U lhs, const CXXAtomic<T>& rhs) { return (T)lhs != rhs.load(); }
+	//template<typename U>
+	//friend bool operator!=(U lhs, const CXXAtomic<T>& rhs) { return (T)lhs != rhs.load(); }
 
 	// >
 	template<typename U>
@@ -352,9 +352,9 @@ public:
 	template<typename U>
 	friend bool operator==(const CXXAtomic<T>& rhs, U lhs) { return rhs.load() == (T)lhs; }
 
-	// !=
-	template<typename U>
-	friend bool operator!=(const CXXAtomic<T>& rhs, U lhs) { return rhs.load() != (T)lhs; }
+	//// !=
+	//template<typename U>
+	//friend bool operator!=(const CXXAtomic<T>& rhs, U lhs) { return rhs.load() != (T)lhs; }
 
 	// >
 	template<typename U>

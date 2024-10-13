@@ -72,7 +72,7 @@ class CXXVariantPrivate;
 //@隐藏}
 
 //@别名 炫通用型
-//@备註 万能类型的变量基本常用类型、文本、自订类、结构体都可以保存
+//@备注 万能类型的变量基本常用类型、文本、自订类、结构体都可以保存
 // 支持转换成其他类型输出(不保证能成功，必须是合理的转换比如文本纯数字转整型)
 class CXXVariant
 {
@@ -174,11 +174,11 @@ public:
 
 	virtual ~CXXVariant();
 
-	//@备註 检查是否可以被转换至指定的数据类型
+	//@备注 检查是否可以被转换至指定的数据类型
 	//@别名 是否可至(数据类型)
 	bool canConvert(cxx::DataType targetType) const;
 
-	//@备註 模板转换至指定的数据类型  炫通用型::到<类型>()
+	//@备注 模板转换至指定的数据类型  炫通用型::到<类型>()
 	//@别名 值()
 	template <typename T>
 	T value() const { CXX_ASSERT_X(false, L"Unsupported type conversion."); }
@@ -230,75 +230,75 @@ public:
 	}
 	//@隐藏} 
 
-	//@备註 获取用户自定义类型的大小
+	//@备注 获取用户自定义类型的大小
 	//@别名 大小()
 	size_t userSize() const;
 
-	//@备註 获取数据指针
+	//@备注 获取数据指针
 	//@别名 地址()
 	void* data() const;
 
-	//@备註 检查是否为空
+	//@备注 检查是否为空
 	//@别名 是否空()
 	bool isNull() const;
 
-	//@备註 获取数据类型名称
+	//@备注 获取数据类型名称
 	//@别名 类型名()
 	CXXString typeName() const;
 
-	//@备註 获取数据类型
+	//@备注 获取数据类型
 	//@别名 类型()
 	cxx::DataType type() const;
 
-	//@备註 转到换逻辑
+	//@备注 转到换逻辑
 	//@别名 到逻辑()
 	bool toBool() const;
 
-	//@备註 转换到有符号8位整数
+	//@备注 转换到有符号8位整数
 	//@别名 到字符A()
 	char toChar() const;
 
-	//@备註 转换到无符号8位整数
+	//@备注 转换到无符号8位整数
 	//@别名 到字节()
 	BYTE toUChar() const;
 
-	//@备註 转换到有符号16位整数
+	//@备注 转换到有符号16位整数
 	//@别名 到短整型()
 	short toShort() const;
 
-	//@备註 转换到无符号16位整数
+	//@备注 转换到无符号16位整数
 	//@别名 到正短整型()
 	USHORT toUShort() const;
 
-	//@备註 转换有符号32位整数
+	//@备注 转换有符号32位整数
 	//@别名 到整型()
 	int toInt() const;
 
-	//@备註 转换到无符号32位整数
+	//@备注 转换到无符号32位整数
 	//@别名 到正整型()
 	UINT toUInt() const;
 
-	//@备註 转换到有符号64位整数
+	//@备注 转换到有符号64位整数
 	//@别名 到长整型()
 	__int64 toLongLong() const;
 
-	//@备註 转换到无符号64位整数
+	//@备注 转换到无符号64位整数
 	//@别名 到正长整型()
 	UINT64 toULongLong() const;
 
-	//@备註 转换到单精度浮点数
+	//@备注 转换到单精度浮点数
 	//@别名 到浮点()
 	float toFloat() const;
 
-	//@备註 转换到双精度浮点数
+	//@备注 转换到双精度浮点数
 	//@别名 到双浮点()
 	double toDouble() const;
 
-	//@备註 转换到宽字符串
+	//@备注 转换到宽字符串
 	//@别名 到文本()
 	CXXString toString() const;
 
-	//@备註 转换到指针
+	//@备注 转换到指针
 	//@别名 到指针()
 	void* toVoidStar() const;
 

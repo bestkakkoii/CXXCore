@@ -129,7 +129,7 @@ bool CXXLibrary::load(const CXXString& libraryName)
 {
 	CXX_D(CXXLibrary);
 
-	std::unique_lock<std::mutex> lock(d->mutex_);
+	std::lock_guard<std::mutex> lock(d->mutex_);
 	d->clear();
 
 	return 	d->loadLibrary(libraryName);
@@ -200,7 +200,7 @@ FARPROC CXXLibrary::resolve(const CXXString& functionName)
 {
 	CXX_D(CXXLibrary);
 
-	std::unique_lock<std::mutex> lock(d->mutex_);
+	std::lock_guard<std::mutex> lock(d->mutex_);
 	return resolveHelper(functionName);
 }
 

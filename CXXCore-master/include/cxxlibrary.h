@@ -91,7 +91,7 @@ public:
 	template<typename ReturnType, typename... Args>
 	bool invoke(cxx::CallingConvention conv, ReturnType* returnType, const CXXString& functionName, Args... args)
 	{
-		std::unique_lock<std::mutex> lock(mutex());
+		std::lock_guard<std::mutex> lock(mutex());
 		if (!isValid())
 		{
 			CXX_ASSERT_X(false, std::wstring(L"Library '") + libraryName() + L"' is not loaded");

@@ -49,6 +49,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@src "CXXCore-master\src\cxxlibrary.cpp"
 //@src "CXXCore-master\src\cxxprocess.cpp"
 //@src "CXXCore-master\src\cxxsetting.cpp"
+//@src "CXXCore-master\src\cxxastardevice.cpp"
 
 #endif
 

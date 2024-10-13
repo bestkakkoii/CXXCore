@@ -41,7 +41,7 @@ namespace cxx
 
 //@分组{［文件／文件夹］.炫　文件对话框类
 
-//@备註 创建打开文件对话框
+//@备注 创建打开文件对话框
 //@参数 目录 起始目录(選填)
 //@参数 标题 对话框标题(選填)
 //@参数 父窗口 父窗口句柄(選填)
@@ -49,7 +49,7 @@ namespace cxx
 //@别名 炫创建打开文件对话框(目录, 标题, 父窗口)
 extern CXXVector<CXXString> cxxCreateOpenFileDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
 
-//@备註 创建打开文件夹对话框
+//@备注 创建打开文件夹对话框
 //@参数 目录 起始目录(選填)
 //@参数 标题 对话框标题(選填)
 //@参数 父窗口 父窗口句柄(選填)
@@ -57,7 +57,7 @@ extern CXXVector<CXXString> cxxCreateOpenFileDialog(const CXXString& directory =
 //@别名 炫创建打开文件夹对话框(目录, 标题, 父窗口)
 extern CXXVector<CXXString> cxxCreateOpenDirectoryDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
 
-//@备註 创建保存文件对话框
+//@备注 创建保存文件对话框
 //@参数 目录 起始目录(選填)
 //@参数 标题 对话框标题(選填)
 //@参数 父窗口 父窗口句柄(選填)
@@ -202,7 +202,7 @@ public:
 	//@别名 置标籤文本(标籤, 文字)
 	void setLabelText(cxx::FileDialogLabel label, const CXXString& text);
 
-	//@备註 设置要保存的文件的初始位置。
+	//@备注 设置要保存的文件的初始位置。
 	// 使用该方法可以将用户打开的文件的路径设置为保存对话框的初始位置。
 	// 这可以用于让用户选择要复盖的文件或指定默认保存位置。
 	//@参数 filePath 要保存的文件的路径。
@@ -210,7 +210,7 @@ public:
 	//@别名 置另存目录(文件路径)
 	void setSaveAsItem(const CXXString& filePath);
 
-	//@备註 设置默认扩展名
+	//@备注 设置默认扩展名
 	//@参数 扩展名
 	//@返回 无
 	//@别名 置默认扩展名(扩展名)

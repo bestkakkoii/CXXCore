@@ -94,7 +94,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir);$(SolutionDir)MFC-GridCtrl-master</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch\cxxstdafx.pch</PrecompiledHeaderOutputFile>
@@ -118,7 +118,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir);$(SolutionDir)MFC-GridCtrl-master</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch\cxxstdafx.pch</PrecompiledHeaderOutputFile>
@@ -143,7 +143,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir);$(SolutionDir)MFC-GridCtrl-master</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch\cxxstdafx.pch</PrecompiledHeaderOutputFile>
@@ -167,7 +167,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir);$(SolutionDir)MFC-GridCtrl-master</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch\cxxstdafx.pch</PrecompiledHeaderOutputFile>
@@ -189,6 +189,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rdparty\wintoastlib\src\wintoastlib.cpp" />
+    <ClCompile Include="..\..\3rdparty\zip\unzip.cpp" />
+    <ClCompile Include="..\..\3rdparty\zip\zip.cpp" />
     <ClCompile Include="..\..\src\cxxcore.cpp" />
     <ClCompile Include="..\..\src\cxxapplication.cpp" />
     <ClCompile Include="..\..\src\cxxatomic.cpp" />

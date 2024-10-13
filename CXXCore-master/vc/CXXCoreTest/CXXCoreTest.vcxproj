@@ -180,6 +180,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rdparty\wintoastlib\src\wintoastlib.cpp" />
+    <ClCompile Include="..\..\src\cxxastardevice.cpp" />
     <ClCompile Include="..\..\src\cxxcore.cpp" />
     <ClCompile Include="..\..\src\cxxapplication.cpp" />
     <ClCompile Include="..\..\src\cxxatomic.cpp" />
@@ -243,7 +244,10 @@
     <ClInclude Include="..\..\..\module_sub_cxxthreadsafe.h" />
     <ClInclude Include="..\..\..\module_sub_cxxutility.h" />
     <ClInclude Include="..\..\..\module_sub_cxxwintoast.h" />
+    <ClInclude Include="..\..\..\module_sub_cxzip.h" />
     <ClInclude Include="..\..\3rdparty\wintoastlib\include\wintoastlib.h" />
+    <ClInclude Include="..\..\include\cxxastardevice.h" />
+    <ClInclude Include="..\..\include\cxxastardevice_p.h" />
     <ClInclude Include="..\..\include\cxxcore.h" />
     <ClInclude Include="..\..\include\cxxapplication.h" />
     <ClInclude Include="..\..\include\cxxapplication_p.h" />

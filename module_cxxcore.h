@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 //@模块名称 炫扩展模块
 //@版本     炫扩展-核心模块
-//@日期     2024-10-06
+//@日期     2024-10-13
 //@作者     Bestkakkoii
 //@依赖     "module_cxxcore.h"
 //@QQ       1642687802
@@ -60,14 +60,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // - **炫文本默认编码**: UTF-16LE
 // 
 // # 最新更新日志:
-// ####[2024-10-10]()
-// * 修改 将 `cxxmemorypool.h` 和 `cxxmemorypool.cpp` 的版权声明从 Box2D 版权声明更改为 GNU General Public License(GPL)。
-//   * 将 `cxxmemorypool.h` 中的 `#include <cxxglobal.h>` 和 `#include <cstdint>` 替换为 `#include <memory_resource>`。
-//	 * 移除了原本的内存池实现，并改用 C++17 的 `std::pmr::synchronized_pool_resource` 来实现内存池，并将内存池的默认大小设置为 1MB(`MemoryPoolDefaultPoolSize`)。
-//   * 更新了内存池的优点和缺点说明，并添加了使用方法的註释。
-//   * 将 `CXXMemoryPool` 类模板化，并修改了内存分配和释放的方法签名，使其支持分配和释放指定数量的对象。
-//   * 更新了 `CXXScopedMemoryPool` 类，使其与新的 `CXXMemoryPool` 类兼容。
-//   * 在 `CXXCoreTest.vcxproj.filters` 中，将 `cxxmemorypool` 的过滤器从 `old` 文件夹移动到 `template` 文件夹。
+// ####[2024-10 -13]()
+// * 新增 工具子模块 添加 炫ZIP(CXXZip)类 用于 ZIP 文件的压缩和解压缩
 //
 // [Gitee](https://gitee.com/Bestkakkoii/CXXCore)
 // [Github](https://github.com/bestkakkoii/CXXCore)

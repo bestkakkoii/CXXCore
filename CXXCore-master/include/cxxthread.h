@@ -263,7 +263,7 @@ public:
 		}
 
 		auto task = std::bind(std::forward<Function>(func), std::forward<Args>(args)...);
-		std::unique_lock<std::mutex> lock(mutex_);
+		std::lock_guard<std::mutex> lock(mutex_);
 		tasks_.emplace_back(std::move(task));
 		condition_.notify_one();
 	}
@@ -277,7 +277,7 @@ public:
 		}
 
 		auto task = std::bind(func, classptr, std::forward<Args>(args)...);
-		std::unique_lock<std::mutex> lock(mutex_);
+		std::lock_guard<std::mutex> lock(mutex_);
 		tasks_.emplace_back(std::move(task));
 		condition_.notify_one();
 	}

@@ -1,6 +1,10 @@
 ﻿## 更新日志
 
+#### [2024-10-13]()
+  * 新增 工具子模块 添加 炫ZIP(CXXZip)类 用于 ZIP 文件的压缩和解压缩
+
 #### [2024-10-10]()
+  * 新增 工具子模块 添加 炫A星(CXXAStarDevice)类 用于 2D 地图的路径规划
   * 修改 将 `cxxmemorypool.h` 和 `cxxmemorypool.cpp` 的版权声明从 Box2D 版权声明更改为 GNU General Public License (GPL)。
     * 将 `cxxmemorypool.h` 中的 `#include <cxxglobal.h>` 和 `#include <cstdint>` 替换为 `#include <memory_resource>`。
     * 移除了原本的内存池实现，并改用 C++17 的 `std::pmr::synchronized_pool_resource` 来实现内存池，并将内存池的默认大小设置为 1MB (`MemoryPoolDefaultPoolSize`)。

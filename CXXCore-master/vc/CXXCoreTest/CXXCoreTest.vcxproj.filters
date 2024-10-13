@@ -147,6 +147,9 @@
     <Filter Include="template\cxxmemorypool">
       <UniqueIdentifier>{43d4f465-2a87-4dfe-9c28-be45140139e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="pimpl\cxxastar">
+      <UniqueIdentifier>{3ccf4a7a-2f8b-4301-b2c0-4c2a9891a506}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
@@ -298,6 +301,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\cxxsharedpointer.cpp">
       <Filter>template\cxxsharedpointer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\cxxastardevice.cpp">
+      <Filter>pimpl\cxxastar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -546,6 +552,15 @@
     </ClInclude>
     <ClInclude Include="..\..\include\cxxsharedpointer.h">
       <Filter>template\cxxsharedpointer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxastardevice.h">
+      <Filter>pimpl\cxxastar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\cxxastardevice_p.h">
+      <Filter>pimpl\cxxastar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxzip.h">
+      <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

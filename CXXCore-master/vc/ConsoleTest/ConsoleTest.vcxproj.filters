@@ -12,6 +12,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="3rdparty">
+      <UniqueIdentifier>{d7d7dc1b-70db-441a-be24-d3dc6648d049}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -160,6 +163,12 @@
     </ClCompile>
     <ClCompile Include="..\..\3rdparty\wintoastlib\src\wintoastlib.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\zip\unzip.cpp">
+      <Filter>3rdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rdparty\zip\zip.cpp">
+      <Filter>3rdparty</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

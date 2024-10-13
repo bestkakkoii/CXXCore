@@ -36,4 +36,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@解析头文件
 #include <cxxsetting.h>
 
+//@解析头文件
+#include <cxxastardevice.h>
+
 #endif // CXX_H_
