@@ -74,7 +74,7 @@ bool CXXAStarDevicePrivate::getNodeIndex(CXXNode*& node, __int64* index)
 	__int64 size = static_cast<__int64>(open_list_.size());
 	while (*index < size)
 	{
-		if (open_list_[*index]->pos == node->pos)
+		if (open_list_[static_cast<size_t>(*index)]->pos == node->pos)
 		{
 			return true;
 		}
@@ -91,9 +91,9 @@ void CXXAStarDevicePrivate::percolateUp(__int64& hole)
 	while (hole > 0)
 	{
 		parent = (hole - 1) / 2;
-		if (open_list_[hole]->f() < open_list_[parent]->f())
+		if (open_list_[static_cast<size_t>(hole)]->f() < open_list_[static_cast<size_t>(parent)]->f())
 		{
-			std::swap(open_list_[hole], open_list_[parent]);
+			std::swap(open_list_[static_cast<size_t>(hole)], open_list_[static_cast<size_t>(parent)]);
 			hole = parent;
 		}
 		else
@@ -137,7 +137,7 @@ static __forceinline __int64 Manhattan_Distance(const CXXPoint& current, const C
 // 节点是否存在于开启列表
 __forceinline bool CXXAStarDevicePrivate::isInOpenList(const CXXPoint& pos, CXXNode*& out_node)
 {
-	out_node = mapping_[static_cast<size_t>(pos.y()) * width_ + pos.x()];
+	out_node = mapping_[static_cast<size_t>(pos.y()) * static_cast<size_t>(width_) + static_cast<size_t>(pos.x())];
 
 	return out_node ? out_node->state == NodeState::IN_OPENLIST : false;
 }
@@ -145,7 +145,7 @@ __forceinline bool CXXAStarDevicePrivate::isInOpenList(const CXXPoint& pos, CXXN
 // 节点是否存在于关闭列表
 __forceinline bool CXXAStarDevicePrivate::isInCloseList(const CXXPoint& pos)
 {
-	CXXNode* node_ptr = mapping_[static_cast<size_t>(pos.y()) * width_ + pos.x()];
+	CXXNode* node_ptr = mapping_[static_cast<size_t>(pos.y()) * static_cast<size_t>(width_) + static_cast<size_t>(pos.x())];
 
 	return node_ptr ? node_ptr->state == NodeState::IN_CLOSEDLIST : false;
 }
@@ -207,8 +207,8 @@ bool CXXAStarDevicePrivate::isPassible(const CXXPoint& current, const CXXPoint& 
 	}
 
 	// 检查对角移动的两个相邻地块
-	double cost1 = getActualCost(CXXPoint(current.x() + dx, current.y()));
-	double cost2 = getActualCost(CXXPoint(current.x(), current.y() + dy));
+	double cost1 = getActualCost(CXXPoint(current.x() + static_cast<intptr_t>(dx), current.y()));
+	double cost2 = getActualCost(CXXPoint(current.x(), current.y() + static_cast<intptr_t>(dy)));
 
 	if (cost1 <= -1.0 || cost2 <= -1.0)
 	{
@@ -248,7 +248,7 @@ __forceinline __int64 CXXAStarDevicePrivate::calculateHValue(const CXXPoint& cur
 	{
 		for (__int64 x = std::max(0LL, current.x() - OBSTACLE_CHECK_RADIUS); x <= std::min(width_ - 1, current.x() + OBSTACLE_CHECK_RADIUS); ++x)
 		{
-			double cost = getActualCost(CXXPoint(x, y));
+			double cost = getActualCost(CXXPoint(static_cast<intptr_t>(x), static_cast<intptr_t>(y)));
 			if (cost < 0 && cost > -1.0f)  // 检查是否是需要避开的区域
 			{
 				__int64 distance = std::max(std::abs(x - current.x()), std::abs(y - current.y()));
@@ -308,7 +308,7 @@ void CXXAStarDevicePrivate::handleFoundNodeFail(CXXNode*& current, CXXNode*& des
 	{
 		for (__int64 x = std::max(0LL, destination->pos.x() - OBSTACLE_CHECK_RADIUS); x <= std::min(width_ - 1, destination->pos.x() + OBSTACLE_CHECK_RADIUS); ++x)
 		{
-			if (getActualCost(CXXPoint(x, y)) < 0)
+			if (getActualCost(CXXPoint(static_cast<intptr_t>(x), static_cast<intptr_t>(y))) < 0)
 			{
 				__int64 distance = std::max(std::abs(x - destination->pos.x()), std::abs(y - destination->pos.y()));
 				obstacle_cost += OBSTACLE_PENALTY / (distance + 1);
@@ -319,7 +319,7 @@ void CXXAStarDevicePrivate::handleFoundNodeFail(CXXNode*& current, CXXNode*& des
 	destination->g += obstacle_cost;
 
 	destination->state = NodeState::IN_OPENLIST;
-	mapping_[static_cast<size_t>(destination->pos.y()) * width_ + destination->pos.x()] = destination;
+	mapping_[static_cast<size_t>(destination->pos.y()) * static_cast<size_t>(width_) + destination->pos.x()] = destination;
 
 	open_list_.emplace_back(destination);
 	std::push_heap(open_list_.begin(), open_list_.end(), [](const CXXNode* a, const CXXNode* b)->bool
@@ -333,7 +333,7 @@ void CXXAStarDevicePrivate::handleFoundNodeFail(CXXNode*& current, CXXNode*& des
 void CXXAStarDevicePrivate::findPassibleNodes(const CXXPoint& current, const bool& corner, std::vector<CXXPoint>* out_lists)
 {
 	CXXPoint destination;
-	__int64 row_index = std::max(0LL, current.y() - 1);
+	__int64 row_index = std::max(0LL, static_cast<__int64>(current.y()) - 1LL);
 	const __int64 max_row = std::min(height_ - 1LL, current.y() + 1LL);
 	const __int64 max_col = std::min(width_ - 1LL, current.x() + 1LL);
 
@@ -341,10 +341,10 @@ void CXXAStarDevicePrivate::findPassibleNodes(const CXXPoint& current, const boo
 
 	for (; row_index <= max_row; ++row_index)
 	{
-		for (__int64 col_index = std::max(0LL, current.x() - 1); col_index <= max_col; ++col_index)
+		for (__int64 col_index = std::max(0LL, static_cast<__int64>(current.x()) - 1LL); col_index <= max_col; ++col_index)
 		{
-			destination.setX(col_index);
-			destination.setY(row_index);
+			destination.setX(static_cast<intptr_t>(col_index));
+			destination.setY(static_cast<intptr_t>(row_index));
 			double cost = 0.0;
 
 			if (isPassible(current, destination, corner, cost))
@@ -354,7 +354,7 @@ void CXXAStarDevicePrivate::findPassibleNodes(const CXXPoint& current, const boo
 				{
 					for (__int64 x = std::max(0LL, destination.x() - OBSTACLE_CHECK_RADIUS); x <= std::min(width_ - 1, destination.x() + OBSTACLE_CHECK_RADIUS); ++x)
 					{
-						if (getActualCost(CXXPoint(x, y)) < 0)
+						if (getActualCost(CXXPoint(static_cast<intptr_t>(x), static_cast<intptr_t>(y))) < 0)
 						{
 							__int64 distance = std::max(std::abs(x - destination.x()), std::abs(y - destination.y()));
 							obstacle_distance = std::min(obstacle_distance, distance);
@@ -411,11 +411,11 @@ std::vector<CXXPoint> CXXAStarDevicePrivate::generateAlternativeGoals(const CXXP
 		__int64 dx = static_cast<__int64>(deviation * std::cos(angle));
 		__int64 dy = static_cast<__int64>(deviation * std::sin(angle));
 
-		CXXPoint alt_goal = start + direction / 2 + CXXPoint(dx, dy);
+		CXXPoint alt_goal = start + direction / 2 + CXXPoint(static_cast<intptr_t>(dx), static_cast<intptr_t>(dy));
 
 		// 确保替代目标在网格范围内
-		alt_goal.setX(std::clamp(static_cast<__int64>(alt_goal.x()), 0LL, static_cast<__int64>(width_) - 1LL));
-		alt_goal.setY(std::clamp(static_cast<__int64>(alt_goal.y()), 0LL, static_cast<__int64>(height_) - 1LL));
+		alt_goal.setX(static_cast<intptr_t>(std::clamp(static_cast<__int64>(alt_goal.x()), 0LL, static_cast<__int64>(width_) - 1LL)));
+		alt_goal.setY(static_cast<intptr_t>(std::clamp(static_cast<__int64>(alt_goal.y()), 0LL, static_cast<__int64>(height_) - 1LL)));
 
 		// 只有当目标可通过时才添加
 		if (isPassible(alt_goal))
@@ -477,7 +477,7 @@ void CXXAStarDevice::initialize(__int64 width, __int64 height)
 	d_ptr->height_ = height;
 	d_ptr->width_ = width;
 
-	d_ptr->resource_.reset(new std::pmr::monotonic_buffer_resource(d_ptr->width_ * d_ptr->height_ * sizeof(CXXNode) * 2));
+	d_ptr->resource_.reset(new std::pmr::monotonic_buffer_resource(static_cast<size_t>(d_ptr->width_ * d_ptr->height_) * sizeof(CXXNode) * 2));
 	CXX_ASSERT(d_ptr->resource_ != CXX_NULLPTR);
 
 	d_ptr->allocator_.reset(new std::pmr::polymorphic_allocator<CXXNode>(d_ptr->resource_.get()));
@@ -487,7 +487,7 @@ void CXXAStarDevice::initialize(__int64 width, __int64 height)
 
 	d_ptr->mapping_.clear();
 
-	d_ptr->mapping_.resize(static_cast<size_t>(d_ptr->width_) * d_ptr->height_);
+	d_ptr->mapping_.resize(static_cast<size_t>(d_ptr->width_) * static_cast<size_t>(d_ptr->height_));
 }
 
 void CXXAStarDevice::setCanpass(const CXXAStarCallback& callback)
@@ -530,7 +530,7 @@ bool CXXAStarDevice::find(const CXXPoint& start, const CXXPoint& end, CXXVector<
 	std::allocator_traits<std::pmr::polymorphic_allocator<CXXNode>>::construct(*d_ptr->allocator_, start_node, d_ptr->start_);// 构造对象
 	d_ptr->open_list_.emplace_back(start_node);
 	start_node->state = NodeState::IN_OPENLIST;
-	d_ptr->mapping_[static_cast<size_t>(start_node->pos.y()) * d_ptr->width_ + start_node->pos.x()] = start_node;
+	d_ptr->mapping_[static_cast<size_t>(start_node->pos.y()) * static_cast<size_t>(d_ptr->width_) + static_cast<size_t>(start_node->pos.x())] = start_node;
 
 	CXXPoint current_goal = end;
 
@@ -569,7 +569,7 @@ bool CXXAStarDevice::find(const CXXPoint& start, const CXXPoint& end, CXXVector<
 			d_ptr->open_list_.pop_back();
 		}
 
-		d_ptr->mapping_[static_cast<size_t>(current->pos.y()) * d_ptr->width_ + current->pos.x()]->state = NodeState::IN_CLOSEDLIST;
+		d_ptr->mapping_[static_cast<size_t>(current->pos.y()) * static_cast<size_t>(d_ptr->width_) + static_cast<size_t>(current->pos.x())]->state = NodeState::IN_CLOSEDLIST;
 
 		// 是否找到当前目标
 		if (current->pos == current_goal)
