@@ -129,7 +129,7 @@ CXXRegexMatch& CXXRegexMatch::operator=(const CXXRegexMatch& other)
 {
 	CXX_D(CXXRegexMatch);
 	d->match_ = other.d_ptr->match_;
-	d->valid_ = other.d_ptr->valid_;
+	d->valid_.store(other.d_ptr->valid_.load(std::memory_order_acquire), std::memory_order_release);
 
 	return *this;
 }
@@ -221,7 +221,7 @@ CXXRegexMatchIterator& CXXRegexMatchIterator::operator=(const CXXRegexMatchItera
 	d->text_ = other.d_ptr->text_;
 	d->iterator_ = other.d_ptr->iterator_;
 	d->end_ = other.d_ptr->end_;
-	d->valid_ = other.d_ptr->valid_;
+	d->valid_.store(other.d_ptr->valid_.load(std::memory_order_acquire), std::memory_order_release);
 
 	return *this;
 }
