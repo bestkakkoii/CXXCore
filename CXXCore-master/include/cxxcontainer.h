@@ -22,9 +22,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@隐藏}
 
 //@解析头文件
-#include <cxxatomic.h>
-
-//@解析头文件
 #include <cxxhash.h>
 
 //@解析头文件

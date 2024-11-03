@@ -26,7 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <cxxglobal.h>
 #include <cxxvector.h>
 #include <cxxhash.h>
-#include <cxxatomic.h>
+
 #include <cxxmutex.h>
 #include <cxxstring.h>
 #include <cxxvariant.h>
@@ -37,6 +37,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <mutex>
 #include <deque>
 #include <stdio.h>
+#include <atomic.h>
 
 //@别名 炫
 namespace cxx
@@ -92,7 +93,8 @@ class CXXIndexer
 public:
 	CXXIndexer(__int64 index)
 		: index_(index)
-	{}
+	{
+	}
 
 	//@备注 设置索引
 	//@参数 index 索引
@@ -126,7 +128,7 @@ public:
 
 private:
 	CXXVariant property_;
-	CXXAtomicInt64 index_ = -1;
+	std::atomic<__int64> index_ = -1;
 
 };
 
@@ -214,9 +216,9 @@ public:
 	*/
 private:
 	//@隐藏{
-	CXXAtomicBool isInterruptionRequested_ = false;
-	CXXAtomicBool isRunning_ = false;
-	CXXAtomicBool isPaused_ = false;
+	std::atomic_bool isInterruptionRequested_ = false;
+	std::atomic_bool isRunning_ = false;
+	std::atomic_bool isPaused_ = false;
 
 	mutable std::mutex mutex_;
 	mutable std::condition_variable pausedCondition_;
@@ -535,7 +537,8 @@ class CXXFuture
 public:
 	CXXFuture(std::future<T>&& fut)
 		: futurePtr(std::make_unique<std::future<T>>(std::move(fut)))
-	{}
+	{
+	}
 
 	//@隐藏{
 
@@ -543,7 +546,8 @@ public:
 		: futurePtr(std::move(other.futurePtr))
 		, result_(other.result_)
 		, isResultTaken_(other.isResultTaken_.load(std::memory_order_acquire))
-	{}
+	{
+	}
 
 
 	CXXFuture<T>& operator=(CXXFuture<T>&& other) noexcept

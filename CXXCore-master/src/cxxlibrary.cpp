@@ -322,7 +322,7 @@ std::mutex& CXXLibrary::mutex()
 	return d->mutex_;
 }
 
-CXXAtomicUInt32& CXXLibrary::lastError()
+std::atomic<unsigned int>& CXXLibrary::lastError()
 {
 	CXX_D(CXXLibrary);
 

@@ -143,7 +143,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir);$(SolutionDir)MFC-GridCtrl-master</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;$(SolutionDir)..\3rdparty;$(SolutionDir)..;$(SolutionDir);$(SolutionDir)imgui-master\backends;$(SolutionDir)imgui-master</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <PrecompiledHeaderFile>cxxstdafx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch\cxxstdafx.pch</PrecompiledHeaderOutputFile>
@@ -152,7 +152,7 @@
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
@@ -189,8 +189,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rdparty\wintoastlib\src\wintoastlib.cpp" />
-    <ClCompile Include="..\..\3rdparty\zip\unzip.cpp" />
-    <ClCompile Include="..\..\3rdparty\zip\zip.cpp" />
     <ClCompile Include="..\..\src\cxxcore.cpp" />
     <ClCompile Include="..\..\src\cxxapplication.cpp" />
     <ClCompile Include="..\..\src\cxxatomic.cpp" />

@@ -164,11 +164,5 @@
     <ClCompile Include="..\..\3rdparty\wintoastlib\src\wintoastlib.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\3rdparty\zip\unzip.cpp">
-      <Filter>3rdparty</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rdparty\zip\zip.cpp">
-      <Filter>3rdparty</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

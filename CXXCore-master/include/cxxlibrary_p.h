@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #define CXXLIBRARY_P_H_
 
 #include <cxxlibrary.h>
-#include <cxxatomic.h>
+#include <atomic>
 
 #include <mutex>
 #include <unordered_map>
@@ -44,9 +44,9 @@ public:
 private:
 	std::wstring libraryName_;
 	std::wstring pluginName_;
-	CXXAtomic<HMODULE> hModule_ = CXX_NULLPTR;
-	CXXAtomicUInt32 lastError_ = 0;
-	CXXAtomicBool unFreeAbled_ = true;
+	std::atomic<HMODULE> hModule_ = CXX_NULLPTR;
+	std::atomic<unsigned int> lastError_ = 0;
+	std::atomic_bool unFreeAbled_ = true;
 
 	std::mutex mutex_;
 	std::unordered_map<std::wstring, FARPROC> usedFunctions_;

@@ -47,7 +47,10 @@ namespace cxx
 //@参数 父窗口 父窗口句柄(選填)
 //@返回 已选择的文件
 //@别名 炫创建打开文件对话框(目录, 标题, 父窗口)
-extern CXXVector<CXXString> cxxCreateOpenFileDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
+//@隐藏{
+extern 
+//@隐藏}
+CXXVector<CXXString> cxxCreateOpenFileDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
 
 //@备注 创建打开文件夹对话框
 //@参数 目录 起始目录(選填)
@@ -55,7 +58,10 @@ extern CXXVector<CXXString> cxxCreateOpenFileDialog(const CXXString& directory =
 //@参数 父窗口 父窗口句柄(選填)
 //@返回 已选择的目录
 //@别名 炫创建打开文件夹对话框(目录, 标题, 父窗口)
-extern CXXVector<CXXString> cxxCreateOpenDirectoryDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
+//@隐藏{
+extern
+//@隐藏}
+CXXVector<CXXString> cxxCreateOpenDirectoryDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
 
 //@备注 创建保存文件对话框
 //@参数 目录 起始目录(選填)
@@ -63,7 +69,10 @@ extern CXXVector<CXXString> cxxCreateOpenDirectoryDialog(const CXXString& direct
 //@参数 父窗口 父窗口句柄(選填)
 //@返回 已选择的文件
 //@别名 炫创建保存文件对话框(目录, 标题, 父窗口)
-extern CXXVector<CXXString> cxxCreateSaveFileDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
+//@隐藏{
+extern
+//@隐藏}
+CXXVector<CXXString> cxxCreateSaveFileDialog(const CXXString& directory = L"", const CXXString& caption = L"", HWND parent = CXX_NULLPTR);
 
 //@隐藏{
 class CXXFileDialogPrivate;

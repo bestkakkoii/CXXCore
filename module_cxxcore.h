@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 //@模块名称 炫扩展模块
 //@版本     炫扩展-核心模块
-//@日期     2024-10-13
+//@日期     2024-11-03
 //@作者     Bestkakkoii
 //@依赖     "module_cxxcore.h"
 //@QQ       1642687802
@@ -46,7 +46,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // 
 // * 环境配置 -> 请查看 `@当前模块路径/README.md` *
 // * 历史更新日誌 -> 请查看 `@当前模块路径/CHANGELOG.md` *
-// * 书写规范     -> 请查看 `@当前模块路径/CXXCore-master/.gitee/PULL_REQUEST_TEMPLATE/PULL_REQUEST_TEMPLATE.zh-CN.md` *
+// * 书写规范     -> 请查看 `@当前模块路径/CXXCore-master/doc/PULL_REQUEST_TEMPLATE/PULL_REQUEST_TEMPLATE.zh-CN.md` *
 // * 清理无用缓存文件或已生成的二进制文件 -> 请查看 `@当前模块路径/CleanCache.ps1` *
 // ***.MD文件请用记事本、VS Code或任意文本编辑器打开(UTF-8编码)***
 // 
@@ -60,8 +60,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // - **炫文本默认编码**: UTF-16LE
 // 
 // # 最新更新日志:
-// ####[2024-10 -13]()
-// * 新增 工具子模块 添加 炫ZIP(CXXZip)类 用于 ZIP 文件的压缩和解压缩
+// ####[2024-11-03]()
+// * 新增 CXXAtarDevice A星算法器直接初始化地图长宽的构造函数
+// * 修改 进一步拆分模块
+//   * 修正 对应模块拆分，修正示例中依赖的模块
+// * 修改 解耦其他子模块对于 CXXAtomic 的依赖，改为使用 std::atomic
 //
 // [Gitee](https://gitee.com/Bestkakkoii/CXXCore)
 // [Github](https://github.com/bestkakkoii/CXXCore)

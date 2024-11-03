@@ -233,18 +233,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\module_cxxcore.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxastar.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxatomic.h" />
     <ClInclude Include="..\..\..\module_sub_cxxcom.h" />
     <ClInclude Include="..\..\..\module_sub_cxxcontainer.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxcrypto.h" />
     <ClInclude Include="..\..\..\module_sub_cxxdatetime.h" />
     <ClInclude Include="..\..\..\module_sub_cxxfiledialog.h" />
     <ClInclude Include="..\..\..\module_sub_cxxjson.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxlibrary.h" />
     <ClInclude Include="..\..\..\module_sub_cxxmemory.h" />
     <ClInclude Include="..\..\..\module_sub_cxxmemorysafe.h" />
     <ClInclude Include="..\..\..\module_sub_cxxpoint.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxsetting.h" />
     <ClInclude Include="..\..\..\module_sub_cxxthreadsafe.h" />
-    <ClInclude Include="..\..\..\module_sub_cxxutility.h" />
+    <ClInclude Include="..\..\..\module_sub_cxxprocess.h" />
     <ClInclude Include="..\..\..\module_sub_cxxwintoast.h" />
     <ClInclude Include="..\..\..\module_sub_cxzip.h" />
+    <ClInclude Include="..\..\..\module_sub_random.h" />
     <ClInclude Include="..\..\3rdparty\wintoastlib\include\wintoastlib.h" />
     <ClInclude Include="..\..\include\cxxastardevice.h" />
     <ClInclude Include="..\..\include\cxxastardevice_p.h" />

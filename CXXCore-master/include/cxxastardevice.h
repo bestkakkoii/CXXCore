@@ -52,6 +52,10 @@ class CXXAStarDevice
 public:
 	CXXAStarDevice();
 
+	//@参数 width 宽度
+	//@参数 height 高度
+	CXXAStarDevice(__int64 width, __int64 height);
+
 	virtual ~CXXAStarDevice();
 
 public:

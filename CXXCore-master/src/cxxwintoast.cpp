@@ -27,12 +27,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <locale>
 #include <chrono>
 #include <algorithm>
+#include <atomic>
 
 namespace cxx
 {
 	namespace
 	{
-		CXXAtomicInt actionIndex_ = -1;
+		std::atomic_int actionIndex_ = -1;
 
 		CXXToastResultCallback resultCallback_;
 

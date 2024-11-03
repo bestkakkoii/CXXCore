@@ -58,7 +58,7 @@
 					<macro />
 				</x86>
 				<x64>
-					<common cplusStd="/std:c++17" debug="0" platformToolset="vs2022" runtimeLibrary="/MD" sdk="Windows10" type="exe" warningLevel="/W3" />
+					<common cplusStd="/std:c++17" debug="0" platformToolset="vs2019" runtimeLibrary="/MD" sdk="Windows10" type="exe" warningLevel="/W3" />
 					<options value="" />
 					<options_link value="" />
 					<def_file path="" />

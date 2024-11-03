@@ -24,12 +24,12 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 #include <cxxglobal.h>
 #include <cxxstring.h>
-#include <cxxatomic.h>
 #include <cxxscopedpointer.h>
 
 #include <string>
 #include <mutex>
 #include <unordered_map>
+#include <atomic>
 
 //@别名 炫
 namespace cxx
@@ -189,7 +189,7 @@ private:
 
 	std::mutex& mutex();
 
-	CXXAtomicUInt32& lastError();
+	std::atomic<unsigned int>& lastError();
 
 	template<typename FuncType, typename ReturnType, typename... Args>
 	bool callFunction(FuncType func, ReturnType* returnType, Args... args)
@@ -198,7 +198,7 @@ private:
 		{
 			SetLastError(0);
 			ReturnType result = func(args...);
-			lastError() = GetLastError();
+			lastError().store(GetLastError(), std::memory_order_released);
 			if (returnType != CXX_NULLPTR)
 			{
 				*returnType = result;

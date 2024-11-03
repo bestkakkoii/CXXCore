@@ -29,6 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <comdef.h>
 #include <unordered_map>
 #include <mutex>
+#include <atomic>
 
 class CXXComVariantPrivate
 {
@@ -39,7 +40,7 @@ public:
 	virtual ~CXXComVariantPrivate();
 
 private:
-	CXXAtomicBool isValid_ = true;
+	std::atomic_bool isValid_ = true;
 	VARIANT result_;
 
 private:

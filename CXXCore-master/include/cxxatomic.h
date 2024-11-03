@@ -28,7 +28,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@备注 
 // ------------------------
 // 用法:
-// cxx::atomic_int n = 100;
+// CXXAtomicInt n = 100;
 // ++n;
 // --n;
 // n += 1;

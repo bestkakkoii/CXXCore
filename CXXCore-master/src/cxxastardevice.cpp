@@ -461,6 +461,12 @@ CXXAStarDevice::CXXAStarDevice()
 {
 }
 
+CXXAStarDevice::CXXAStarDevice(__int64 width, __int64 height)
+	: d_ptr(new CXXAStarDevicePrivate(this))
+{
+	initialize(width, height);
+}
+
 CXXAStarDevice::~CXXAStarDevice()
 {
 	d_ptr->clear();

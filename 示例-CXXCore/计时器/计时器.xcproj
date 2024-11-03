@@ -5,7 +5,7 @@
 		<setting>
 			<config name="调试版">
 				<x86>
-					<common callType="/Gd" cplusStd="/std:c++17" debug="1" exception="/EHa" logo="false" multipleProcesses="/MP" optimizeCode="/Od" platformToolset="vs2022" runtimeLibrary="/MDd" sdk="Windows10" sdl="/sdl" type="exe" uac="/MANIFESTUAC:&quot;level='requireAdministrator'&quot;" warningLevel="/W4" />
+					<common callType="/Gd" cplusStd="/std:c++17" debug="1" exception="/EHa" logo="false" multipleProcesses="/MP" optimizeCode="/Od" platformToolset="vs2019" runtimeLibrary="/MDd" sdk="Windows10" sdl="/sdl" type="exe" uac="/MANIFESTUAC:&quot;level='requireAdministrator'&quot;" warningLevel="/W4" />
 					<options value="" />
 					<options_link value="" />
 					<def_file path="" />

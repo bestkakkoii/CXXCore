@@ -77,7 +77,7 @@
 			</config>
 			<config name="调试版">
 				<x86>
-					<common cplusStd="/std:c++17" debug="1" platformToolset="vs2022" runtimeLibrary="/MDd" sdk="Windows10" type="exe" warningLevel="/W3" />
+					<common cplusStd="/std:c++17" debug="1" platformToolset="vs2019" runtimeLibrary="/MDd" sdk="Windows10" type="exe" warningLevel="/W3" />
 					<options value="" />
 					<options_link value="" />
 					<def_file path="" />

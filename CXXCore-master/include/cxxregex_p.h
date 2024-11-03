@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 #include <cxxregex.h>
 #include <cxxstring.h>
-#include <cxxatomic.h>
+#include <atomic.h>
 
 class CXXRegexPrivate
 {
@@ -34,7 +34,7 @@ public:
 private:
 	std::wregex regex_;
 	std::wstring patternStr_;
-	CXXAtomicBool valid_ = false;
+	std::atomic_bool valid_ = false;
 
 private:
 
@@ -51,7 +51,7 @@ public:
 
 private:
 	std::wsmatch match_;
-	CXXAtomicBool valid_ = false;
+	std::atomic_bool valid_ = false;
 
 private:
 	CXX_DECLARE_PUBLIC(CXXRegexMatch);
@@ -69,7 +69,7 @@ public:
 	std::wsregex_iterator iterator_;
 	std::wsregex_iterator end_;
 
-	CXXAtomicBool valid_ = false;
+	std::atomic_bool valid_ = false;
 
 private:
 	CXX_DECLARE_PUBLIC(CXXRegexMatchIterator);

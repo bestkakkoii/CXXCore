@@ -526,7 +526,7 @@
     <ClInclude Include="..\..\..\module_sub_cxxthreadsafe.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\module_sub_cxxutility.h">
+    <ClInclude Include="..\..\..\module_sub_cxxprocess.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\module_sub_cxxcom.h">
@@ -560,6 +560,24 @@
       <Filter>pimpl\cxxastar</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\module_sub_cxzip.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxastar.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxsetting.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_random.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxcrypto.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxlibrary.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\module_sub_cxxatomic.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

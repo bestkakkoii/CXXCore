@@ -1,5 +1,4 @@
-﻿#pragma once
-/*
+﻿/*
 				GNU GENERAL PUBLIC LICENSE
 				   Version 2, June 1991
 COPYRIGHT (C) Bestkakkoii 2024 All Rights Reserved.

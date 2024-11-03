@@ -28,7 +28,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 #include <cxxglobal.h>
 #include <cxxscopedpointer.h>
-#include <cxxatomic.h>
 #include <cxxstring.h>
 
 //@隐藏{
