@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #define CXXCOM_P_H_
 
 #include <cxxcom.h>
-#include <cxxatomic.h>
+#include <atomic>
 
 #include <windows.h>
 #include <oaidl.h>

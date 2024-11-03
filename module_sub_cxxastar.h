@@ -26,6 +26,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 //@日期     请参考炫扩展-核心模块
 //@作者     Bestkakkoii
 //@依赖     "module_cxxcore.h"
+//@依赖     "module_sub_cxxpoint.h"
 //@QQ       1642687802
 //@默认安装位置 炫扩展\
 //@包含目录 @当前模块路径 "CXXCore-master\include"

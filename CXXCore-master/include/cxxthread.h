@@ -37,7 +37,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 #include <mutex>
 #include <deque>
 #include <stdio.h>
-#include <atomic.h>
+#include <atomic>
 
 //@别名 炫
 namespace cxx
