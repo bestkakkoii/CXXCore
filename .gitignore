@@ -38,3 +38,5 @@
 /3rdparty/zlib
 /vc
 /CXXCore-master/vc/build/CXXCoreTest
+/CXXCore-master/vc/build/ConsoleTest/Debug
+/CXXCore-master/vc/ConsoleTest/test.json
