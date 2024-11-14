@@ -111,6 +111,42 @@ public:
 	//@别名 置密钥(字节集)
 	void setKey(const CXXVector<BYTE>& key);
 
+	//@备註 设置初始化向量，输入为文本
+	//@参数 iv 初始化向量文本
+	//@返回 无
+	//@别名 置初始化向量(文本)
+	void setIV(const CXXString& iv);
+
+	//@备註 设置初始化向量，输入为字节集
+	//@参数 iv 初始化向量字节集
+	//@返回 无
+	//@别名 置初始化向量(字节集)
+	void setIV(const CXXVector<BYTE>& iv);
+
+	//@备註 使用AES-CBC模式加密，输入为文本
+	//@参数 input 输入文本
+	//@返回 是否加密成功
+	//@别名 CBC加密(文本)
+	bool encryptCBC(const CXXString& input);
+
+	//@备註 使用AES-CBC模式加密，输入为字节集
+	//@参数 input 输入字节集
+	//@返回 是否加密成功
+	//@别名 CBC加密(字节集)
+	bool encryptCBC(const CXXVector<BYTE>& input);
+
+	//@备註 使用AES-CBC模式解密，输入为加密后的文本
+	//@参数 input 输入文本
+	//@返回 是否解密成功
+	//@别名 CBC解密(文本)
+	bool decryptCBC(const CXXString& input);
+
+	//@备註 使用AES-CBC模式解密，输入为加密后的字节集
+	//@参数 input 输入字节集
+	//@返回 是否解密成功
+	//@别名 CBC解密(字节集)
+	bool decryptCBC(const CXXVector<BYTE>& input);
+
 	//@备注 提供加密操作，输入为文本形式的 CXXString，返回加密后的 CXXString
 	// 成功后数据会保存于缓存中，可通过 toString() 或 toByteArray() 获取
 	//@别名 加密(文本, 加密算法类型枚举)
@@ -163,6 +199,10 @@ private:
 
 	//@备注 私有方法，使用 BCrypt API 进行解密处理，返回解密后的字节集
 	bool decryptData(const BYTE* data, __int64 dataSize, CXXByteArray* output, cxx::CryptAlgorithm algorithm);
+
+	bool encryptDataCBC(const BYTE* data, __int64 dataSize, CXXByteArray* output);
+
+	bool decryptDataCBC(const BYTE* data, __int64 dataSize, CXXByteArray* output);
 
 	bool handleAsymmetricEncryption(BCRYPT_ALG_HANDLE hAlgorithm, const BYTE* data, __int64 dataSize, CXXByteArray* output, cxx::CryptAlgorithm algorithm) const;
 

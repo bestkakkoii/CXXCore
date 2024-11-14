@@ -268,6 +268,14 @@ public:
 		return true;
 	}
 
+	// 设置加密模式（例如 CBC 模式）
+	static bool setCBCMode(BCRYPT_ALG_HANDLE hAlgorithm)
+	{
+		NTSTATUS status = BCryptSetProperty(hAlgorithm, BCRYPT_CHAINING_MODE,
+			(PUCHAR)BCRYPT_CHAIN_MODE_CBC, sizeof(BCRYPT_CHAIN_MODE_CBC), 0);
+		return BCRYPT_SUCCESS(status);
+	}
+
 	// 判断是否应该跳过 ECB 模式
 	static bool shouldSkipECB(cxx::CryptAlgorithm algorithm)
 	{
@@ -289,6 +297,22 @@ public:
 			return true;  // 这些算法不适用 ECB 模式
 		default:
 			return false;  // 其他算法使用 ECB 模式
+		}
+	}
+
+	// 判断是否支持 CBC 模式
+	static bool supportsCBC(cxx::CryptAlgorithm algorithm)
+	{
+		switch (algorithm)
+		{
+		case cxx::CryptAlgorithm::AES:
+		case cxx::CryptAlgorithm::DES:
+		case cxx::CryptAlgorithm::DESX:
+		case cxx::CryptAlgorithm::TripleDES:
+		case cxx::CryptAlgorithm::TripleDES_112:
+			return true;
+		default:
+			return false;
 		}
 	}
 
@@ -329,6 +353,16 @@ public:
 		key_ = key;
 	}
 
+	// 存储初始化向量
+	void setIV(const CXXByteArray& iv)
+	{
+		if (iv.empty())
+		{
+			throw std::runtime_error("IV cannot be empty");
+		}
+		iv_ = iv;
+	}
+
 	// 获取存储的密钥
 	const CXXByteArray& getKey() const
 	{
@@ -339,9 +373,19 @@ public:
 		return key_;
 	}
 
+	// 获取存储的初始化向量
+	const CXXByteArray& getIV() const
+	{
+		if (iv_.empty())
+		{
+			throw std::runtime_error("IV is not set");
+		}
+		return iv_;
+	}
 
 private:
 	CXXByteArray key_;  // 存储密钥
+	CXXByteArray iv_;   // 存储初始化向量
 	CXXByteArray outputBuffer_;  // 存储加密后的数据
 
 private:
@@ -368,10 +412,79 @@ void CXXCrypto::setKey(const CXXString& key)
 	d_ptr->setKey(keyBytes);
 }
 
+// 设置初始化向量，输入为文本
+void CXXCrypto::setIV(const CXXString& iv)
+{
+	std::string ivWStr = iv.toUtf8();
+	CXXVector<BYTE> ivBytes(ivWStr.begin(), ivWStr.end());
+	d_ptr->setIV(ivBytes);
+}
+
+// 设置初始化向量，输入为字节集
+void CXXCrypto::setIV(const CXXVector<BYTE>& iv)
+{
+	d_ptr->setIV(iv);
+}
+
 // 设置密钥，输入为字节集
 void CXXCrypto::setKey(const CXXVector<BYTE>& key)
 {
 	d_ptr->setKey(key);
+}
+
+bool CXXCrypto::encryptCBC(const CXXString& input)
+{
+	try
+	{
+		d_ptr->outputBuffer_.clear();
+		std::string inputStr = input.toUtf8();
+		return encryptDataCBC(reinterpret_cast<const BYTE*>(inputStr.data()),
+			inputStr.size(),
+			&d_ptr->outputBuffer_);
+	}
+	catch (...)
+	{
+		return false;
+	}
+}
+
+bool CXXCrypto::encryptCBC(const CXXVector<BYTE>& input)
+{
+	return encryptDataCBC(input.data(), input.size(), &d_ptr->outputBuffer_);
+}
+
+bool CXXCrypto::decryptCBC(const CXXString& input)
+{
+	try
+	{
+		d_ptr->outputBuffer_.clear();
+		CXXVector<BYTE> inputBytes = CXXString::fromHexString(input);
+		if (!decryptDataCBC(inputBytes.data(), inputBytes.size(), &d_ptr->outputBuffer_))
+		{
+			return false;
+		}
+
+		// Remove PKCS7 padding
+		if (!d_ptr->outputBuffer_.empty())
+		{
+			size_t paddingSize = d_ptr->outputBuffer_.back();
+			if (paddingSize <= d_ptr->outputBuffer_.size())
+			{
+				d_ptr->outputBuffer_.resize(d_ptr->outputBuffer_.size() - paddingSize);
+			}
+		}
+
+		return true;
+	}
+	catch (...)
+	{
+		return false;
+	}
+}
+
+bool CXXCrypto::decryptCBC(const CXXVector<BYTE>& input)
+{
+	return decryptDataCBC(input.data(), input.size(), &d_ptr->outputBuffer_);
 }
 
 // 提供加密操作，输入为文本形式的 CXXString，返回加密后的 CXXString
@@ -766,6 +879,153 @@ bool CXXCrypto::decryptData(const BYTE* data, __int64 dataSize, CXXByteArray* ou
 	} while (false);
 
 	// 清理资源
+	CXXCryptoPrivate::destroyKey(hKey);
+	CXXCryptoPrivate::closeAlgorithmProvider(hAlgorithm);
+
+	return success;
+}
+
+bool CXXCrypto::encryptDataCBC(const BYTE* data, __int64 dataSize, CXXByteArray* output)
+{
+	BCRYPT_ALG_HANDLE hAlgorithm = nullptr;
+	BCRYPT_KEY_HANDLE hKey = nullptr;
+	bool success = false;
+
+	do
+	{
+		// Open AES algorithm provider
+		if (!CXXCryptoPrivate::openAlgorithmProvider(&hAlgorithm, BCRYPT_AES_ALGORITHM))
+		{
+			break;
+		}
+
+		// Set CBC mode
+		if (!CXXCryptoPrivate::setCBCMode(hAlgorithm))
+		{
+			break;
+		}
+
+		// Get block size
+		DWORD blockSize = 0;
+		if (!CXXCryptoPrivate::getBlockSize(hAlgorithm, &blockSize))
+		{
+			break;
+		}
+
+		// Pad key and data
+		CXXVector<BYTE> key = d_ptr->getKey();
+		key = CXXCryptoPrivate::applyPKCS7Padding(key.data(), key.size(), blockSize);
+
+		// Generate symmetric key
+		if (!CXXCryptoPrivate::generateSymmetricKey(hAlgorithm, &hKey, key))
+		{
+			break;
+		}
+
+		// Pad input data
+		CXXVector<BYTE> paddedData = CXXCryptoPrivate::applyPKCS7Padding(data, dataSize, blockSize);
+
+		// Get required size for encrypted data
+		DWORD requiredSize = 0;
+		if (!CXXCryptoPrivate::encrypt(hKey, paddedData.data(), paddedData.size(),
+			nullptr, 0, requiredSize, 0))
+		{
+			break;
+		}
+
+		// Resize output buffer
+		output->resize(requiredSize);
+
+		// Encrypt data with IV
+		BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO authInfo;
+		BCRYPT_INIT_AUTH_MODE_INFO(authInfo);
+		authInfo.pbNonce = const_cast<BYTE*>(d_ptr->getIV().data());
+		authInfo.cbNonce = d_ptr->getIV().size();
+
+		DWORD encryptedSize = 0;
+		NTSTATUS status = BCryptEncrypt(hKey, paddedData.data(), paddedData.size(),
+			&authInfo, nullptr, 0, output->data(), output->size(),
+			&encryptedSize, 0);
+
+		if (!BCRYPT_SUCCESS(status))
+		{
+			break;
+		}
+
+		output->resize(encryptedSize);
+		success = true;
+
+	} while (false);
+
+	// Cleanup
+	CXXCryptoPrivate::destroyKey(hKey);
+	CXXCryptoPrivate::closeAlgorithmProvider(hAlgorithm);
+
+	return success;
+}
+
+bool CXXCrypto::decryptDataCBC(const BYTE* data, __int64 dataSize, CXXByteArray* output)
+{
+	BCRYPT_ALG_HANDLE hAlgorithm = nullptr;
+	BCRYPT_KEY_HANDLE hKey = nullptr;
+	bool success = false;
+
+	do
+	{
+		// Open AES algorithm provider
+		if (!CXXCryptoPrivate::openAlgorithmProvider(&hAlgorithm, BCRYPT_AES_ALGORITHM))
+		{
+			break;
+		}
+
+		// Set CBC mode
+		if (!CXXCryptoPrivate::setCBCMode(hAlgorithm))
+		{
+			break;
+		}
+
+		// Get block size
+		DWORD blockSize = 0;
+		if (!CXXCryptoPrivate::getBlockSize(hAlgorithm, &blockSize))
+		{
+			break;
+		}
+
+		// Pad key
+		CXXVector<BYTE> key = d_ptr->getKey();
+		key = CXXCryptoPrivate::applyPKCS7Padding(key.data(), key.size(), blockSize);
+
+		// Generate symmetric key
+		if (!CXXCryptoPrivate::generateSymmetricKey(hAlgorithm, &hKey, key))
+		{
+			break;
+		}
+
+		// Prepare output buffer
+		output->resize(dataSize);
+
+		// Decrypt data with IV
+		BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO authInfo;
+		BCRYPT_INIT_AUTH_MODE_INFO(authInfo);
+		authInfo.pbNonce = const_cast<BYTE*>(d_ptr->getIV().data());
+		authInfo.cbNonce = d_ptr->getIV().size();
+
+		DWORD decryptedSize = 0;
+		NTSTATUS status = BCryptDecrypt(hKey, const_cast<BYTE*>(data), dataSize,
+			&authInfo, nullptr, 0, output->data(), output->size(),
+			&decryptedSize, 0);
+
+		if (!BCRYPT_SUCCESS(status))
+		{
+			break;
+		}
+
+		output->resize(decryptedSize);
+		success = true;
+
+	} while (false);
+
+	// Cleanup
 	CXXCryptoPrivate::destroyKey(hKey);
 	CXXCryptoPrivate::closeAlgorithmProvider(hAlgorithm);
 

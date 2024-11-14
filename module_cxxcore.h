@@ -60,11 +60,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // - **炫文本默认编码**: UTF-16LE
 // 
 // # 最新更新日志:
-// ####[2024-11-03]()
-// * 新增 CXXAtarDevice A星算法器直接初始化地图长宽的构造函数
-// * 修改 进一步拆分模块
-//   * 修正 对应模块拆分，修正示例中依赖的模块
-// * 修改 解耦其他子模块对于 CXXAtomic 的依赖，改为使用 std::atomic
+// ####[2024 - 11 - 14]()
+// * 新增 CXXCrypto 增加AES - CBC加密和解密
 //
 // [Gitee](https://gitee.com/Bestkakkoii/CXXCore)
 // [Github](https://github.com/bestkakkoii/CXXCore)
