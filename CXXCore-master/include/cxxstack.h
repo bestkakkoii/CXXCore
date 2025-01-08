@@ -38,8 +38,8 @@ class CXXStack
 {
 public:
 	//@参数 是否加锁, 默认不加锁
-	CXXStack(bool useLock = false)
-		: useLock(useLock)
+	CXXStack(bool useLock_ = false)
+		: useLock_(useLock_)
 	{
 	}
 
@@ -149,45 +149,59 @@ public:
 	{
 		return size();
 	}
+
+	//@备注 清空栈
+	//@返回 无
+	//@别名 清空()
+	void clear()
+	{
+		lockForWrite();
+		while (!s.empty())
+		{
+			s.pop();
+		}
+		unlockForWrite();
+	}
+
 private:
 	//@加读锁
 	void lockForRead() const
 	{
-		if (useLock.load(std::memory_order_acquire))
+		if (useLock_.load(std::memory_order_acquire))
 		{
-			mtx.lock_shared();
+			mutex_.lock_shared();
 		}
 	}
 	//@解读锁
 	void unlockForRead() const
 	{
-		if (useLock.load(std::memory_order_acquire))
+		if (useLock_.load(std::memory_order_acquire))
 		{
-			mtx.unlock_shared();
+			mutex_.unlock_shared();
 		}
 	}
 	//@加写锁
 	void lockForWrite() const
 	{
-		if (useLock.load(std::memory_order_acquire))
+		if (useLock_.load(std::memory_order_acquire))
 		{
-			mtx.lock_shared();
+			mutex_.lock_shared();
 		}
 	}
 	//@解写锁
 	void unlockForWrite() const
 	{
-		if (useLock.load(std::memory_order_acquire))
+		if (useLock_.load(std::memory_order_acquire))
 		{
-			mtx.unlock();
+			mutex_.unlock();
 		}
 	}
 
 private:
 	//@隐藏{
 	std::stack<T> s;
-	std::atomic_bool useLock;
-	mutable std::shared_mutex mtx;
+	std::atomic_bool useLock_;
+	mutable std::shared_mutex mutex_;
 	//@隐藏{
 };
 

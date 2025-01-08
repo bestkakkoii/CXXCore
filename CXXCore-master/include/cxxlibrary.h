@@ -198,7 +198,7 @@ private:
 		{
 			SetLastError(0);
 			ReturnType result = func(args...);
-			lastError().store(GetLastError(), std::memory_order_released);
+			lastError().store(GetLastError(), std::memory_order_release);
 			if (returnType != CXX_NULLPTR)
 			{
 				*returnType = result;

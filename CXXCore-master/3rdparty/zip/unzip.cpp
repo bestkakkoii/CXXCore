@@ -1066,6 +1066,7 @@ void zfree(void *buf)
 				c->sub.code.need = c->lbits;
 				c->sub.code.tree = c->ltree;
 				c->mode = LEN;
+				__fallthrough;
 			case LEN:           // i: get length/literal/eob next
 				j = c->sub.code.need;
 				NEEDBITS(j)
@@ -1113,6 +1114,7 @@ void zfree(void *buf)
 				c->sub.code.tree = c->dtree;
 				LuTracevv((stderr, "inflate:         length %u\n", c->len));
 				c->mode = DIST;
+				__fallthrough;
 			case DIST:          // i: get distance next 
 				j = c->sub.code.need;
 				NEEDBITS(j)
@@ -1143,6 +1145,7 @@ void zfree(void *buf)
 				DUMPBITS(j)
 					LuTracevv((stderr, "inflate:         distance %u\n", c->sub.copy.dist));
 				c->mode = COPY;
+				__fallthrough;
 			case COPY:          // o: copying bytes in window, waiting for space 
 				f = q - c->sub.copy.dist;
 				while (f < s->window)             // modulo window size-"while" instead
@@ -1174,6 +1177,7 @@ void zfree(void *buf)
 					if (s->read != s->write)
 						LEAVE
 						c->mode = END;
+				__fallthrough;
 			case END:
 				r = Z_STREAM_END;
 				LEAVE
@@ -1412,6 +1416,7 @@ void zfree(void *buf)
 					s->sub.trees.index = 0;
 				LuTracev((stderr, "inflate:       table sizes ok\n"));
 				s->mode = IBM_BTREE;
+				__fallthrough;
 			case IBM_BTREE:
 				while (s->sub.trees.index < 4 + (s->sub.trees.table >> 10))
 				{
@@ -1437,6 +1442,7 @@ void zfree(void *buf)
 				s->sub.trees.index = 0;
 				LuTracev((stderr, "inflate:       bits tree ok\n"));
 				s->mode = IBM_DTREE;
+				__fallthrough;
 			case IBM_DTREE:
 				while (t = s->sub.trees.table,
 					s->sub.trees.index < 258 + (t & 0x1f) + ((t >> 5) & 0x1f))
@@ -1512,6 +1518,7 @@ void zfree(void *buf)
 				}
 				ZFREE(z, s->sub.trees.blens);
 				s->mode = IBM_CODES;
+				__fallthrough;
 			case IBM_CODES:
 				UPDATE
 					if ((r = inflate_codes(s, z, r)) != Z_STREAM_END)
@@ -1528,11 +1535,13 @@ void zfree(void *buf)
 					break;
 				}
 				s->mode = IBM_DRY;
+				__fallthrough;
 			case IBM_DRY:
 				FLUSH
 					if (s->read != s->write)
 						LEAVE
 						s->mode = IBM_DONE;
+				__fallthrough;
 			case IBM_DONE:
 				r = Z_STREAM_END;
 				LEAVE
@@ -2493,6 +2502,7 @@ void zfree(void *buf)
 				break;
 			}
 			z->state->mode = IM_FLAG;
+			__fallthrough;
 		case IM_FLAG:
 			IM_NEEDBYTE
 				b = IM_NEXTBYTE;
@@ -2510,18 +2520,22 @@ void zfree(void *buf)
 				break;
 			}
 			z->state->mode = IM_DICT4;
+			__fallthrough;
 		case IM_DICT4:
 			IM_NEEDBYTE
 				z->state->sub.check.need = (uLong)IM_NEXTBYTE << 24;
 			z->state->mode = IM_DICT3;
+			__fallthrough;
 		case IM_DICT3:
 			IM_NEEDBYTE
 				z->state->sub.check.need += (uLong)IM_NEXTBYTE << 16;
 			z->state->mode = IM_DICT2;
+			__fallthrough;
 		case IM_DICT2:
 			IM_NEEDBYTE
 				z->state->sub.check.need += (uLong)IM_NEXTBYTE << 8;
 			z->state->mode = IM_DICT1;
+			__fallthrough;
 		case IM_DICT1:
 			IM_NEEDBYTE; r;
 			z->state->sub.check.need += (uLong)IM_NEXTBYTE;
@@ -2553,18 +2567,22 @@ void zfree(void *buf)
 				break;
 			}
 			z->state->mode = IM_CHECK4;
+			__fallthrough;
 		case IM_CHECK4:
 			IM_NEEDBYTE
 				z->state->sub.check.need = (uLong)IM_NEXTBYTE << 24;
 			z->state->mode = IM_CHECK3;
+			__fallthrough;
 		case IM_CHECK3:
 			IM_NEEDBYTE
 				z->state->sub.check.need += (uLong)IM_NEXTBYTE << 16;
 			z->state->mode = IM_CHECK2;
+			__fallthrough;
 		case IM_CHECK2:
 			IM_NEEDBYTE
 				z->state->sub.check.need += (uLong)IM_NEXTBYTE << 8;
 			z->state->mode = IM_CHECK1;
+			__fallthrough;
 		case IM_CHECK1:
 			IM_NEEDBYTE
 				z->state->sub.check.need += (uLong)IM_NEXTBYTE;
@@ -2578,6 +2596,7 @@ void zfree(void *buf)
 			}
 			LuTracev((stderr, "inflate: zlib check ok\n"));
 			z->state->mode = IM_DONE;
+			__fallthrough;
 		case IM_DONE:
 			return Z_STREAM_END;
 		case IM_BAD:

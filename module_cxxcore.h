@@ -60,8 +60,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // - **炫文本默认编码**: UTF-16LE
 // 
 // # 最新更新日志:
-// ####[2024 - 11 - 14]()
-// * 新增 CXXCrypto 增加AES - CBC加密和解密
+// #### [2025-01-08]()
+// * 新增 CXXStack 增加栈清空函数
 //
 // [Gitee](https://gitee.com/Bestkakkoii/CXXCore)
 // [Github](https://github.com/bestkakkoii/CXXCore)

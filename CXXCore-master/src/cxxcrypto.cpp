@@ -468,7 +468,7 @@ bool CXXCrypto::decryptCBC(const CXXString& input)
 		if (!d_ptr->outputBuffer_.empty())
 		{
 			size_t paddingSize = d_ptr->outputBuffer_.back();
-			if (paddingSize <= d_ptr->outputBuffer_.size())
+			if (paddingSize <= static_cast<size_t>(d_ptr->outputBuffer_.size()))
 			{
 				d_ptr->outputBuffer_.resize(d_ptr->outputBuffer_.size() - paddingSize);
 			}
@@ -927,7 +927,7 @@ bool CXXCrypto::encryptDataCBC(const BYTE* data, __int64 dataSize, CXXByteArray*
 
 		// Get required size for encrypted data
 		DWORD requiredSize = 0;
-		if (!CXXCryptoPrivate::encrypt(hKey, paddedData.data(), paddedData.size(),
+		if (!CXXCryptoPrivate::encrypt(hKey, paddedData.data(), static_cast<ULONG>(paddedData.size()),
 			nullptr, 0, requiredSize, 0))
 		{
 			break;
@@ -940,11 +940,11 @@ bool CXXCrypto::encryptDataCBC(const BYTE* data, __int64 dataSize, CXXByteArray*
 		BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO authInfo;
 		BCRYPT_INIT_AUTH_MODE_INFO(authInfo);
 		authInfo.pbNonce = const_cast<BYTE*>(d_ptr->getIV().data());
-		authInfo.cbNonce = d_ptr->getIV().size();
+		authInfo.cbNonce = static_cast<ULONG>(d_ptr->getIV().size());
 
 		DWORD encryptedSize = 0;
-		NTSTATUS status = BCryptEncrypt(hKey, paddedData.data(), paddedData.size(),
-			&authInfo, nullptr, 0, output->data(), output->size(),
+		NTSTATUS status = BCryptEncrypt(hKey, paddedData.data(), static_cast<ULONG>(paddedData.size()),
+			&authInfo, nullptr, 0, output->data(), static_cast<ULONG>(output->size()),
 			&encryptedSize, 0);
 
 		if (!BCRYPT_SUCCESS(status))
@@ -1008,11 +1008,11 @@ bool CXXCrypto::decryptDataCBC(const BYTE* data, __int64 dataSize, CXXByteArray*
 		BCRYPT_AUTHENTICATED_CIPHER_MODE_INFO authInfo;
 		BCRYPT_INIT_AUTH_MODE_INFO(authInfo);
 		authInfo.pbNonce = const_cast<BYTE*>(d_ptr->getIV().data());
-		authInfo.cbNonce = d_ptr->getIV().size();
+		authInfo.cbNonce = static_cast<ULONG>(d_ptr->getIV().size());
 
 		DWORD decryptedSize = 0;
-		NTSTATUS status = BCryptDecrypt(hKey, const_cast<BYTE*>(data), dataSize,
-			&authInfo, nullptr, 0, output->data(), output->size(),
+		NTSTATUS status = BCryptDecrypt(hKey, const_cast<BYTE*>(data), static_cast<ULONG>(dataSize),
+			&authInfo, nullptr, 0, output->data(), static_cast<ULONG>(output->size()),
 			&decryptedSize, 0);
 
 		if (!BCRYPT_SUCCESS(status))

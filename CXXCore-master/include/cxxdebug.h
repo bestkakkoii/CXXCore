@@ -269,7 +269,7 @@ public: // static
 		if (std::regex_search(format.toStdWString(), match, reg))
 		{
 			std::wostringstream ss;
-			ss << T;
+			ss << value;
 			customFormatHashRef().insert(std::pair<std::wstring, std::wstring>(format.toStdWString(), ss.str()));
 		}
 	}
