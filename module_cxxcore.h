@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 //@模块名称 炫扩展模块
 //@版本     炫扩展-核心模块
-//@日期     2024-11-03
+//@日期     2025-01-08
 //@作者     Bestkakkoii
 //@依赖     "module_cxxcore.h"
 //@QQ       1642687802
