@@ -43,3 +43,12 @@
 /CXXCore-master/vc/.vs/CopilotSnapshots/D60C9DE3CFDC514D88F2CA8BB2D7EB9A/1D464CD98433664D9DB8AB95B7BBA60E
 /CXXCore-master/vc/deploy/bin/CXXCoreTest/Debug
 /CXXCore-master/vc/deploy/bin/ConsoleTest/Debug
+/CXXCore-master/vc/build/ConsoleTest/Release
+/CXXCore-master/vc/CXXCore/Debug
+/CXXCore-master/vc/CXXCore/Release
+/CXXCore-master/vc/CXXCore/x64/Debug
+/CXXCore-master/vc/CXXCore/x64/Release
+/CXXCore-master/vc/deploy/bin/ConsoleTest/Release
+/CXXCore-master/vc/deploy/lib/CXXCore/Win32/Debug
+*.pdb
+/示例-CXXCore/插件动态调用/Debug
