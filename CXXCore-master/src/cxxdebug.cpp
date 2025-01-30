@@ -179,7 +179,8 @@ CXXDebugPrivate::~CXXDebugPrivate()
 CXXDebug& CXXDebugPrivate::maybeSpace()
 {
 	// if not end with ' ' , add a space
-	if (outputBuffer_.str().back() != L' ')
+	std::wstring str = outputBuffer_.str();
+	if (!str.empty() && str.back() != L' ')
 	{
 		outputBuffer_ << L" ";
 	}

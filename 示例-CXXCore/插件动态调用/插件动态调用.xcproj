@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="" ui_loadType="1" ui_zipPassword="" expand="1">
 	<language value="xc" />
-	<vc config="调试版" platform="x86" moduleLib="lib" autoDefFile="1">
+	<vc config="调试版" platform="x86" moduleLib="lib" autoDefFile="1" loadDllSymbol="0" moduleBeta="0">
 		<setting>
 			<config name="调试版">
 				<x86>

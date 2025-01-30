@@ -5,6 +5,7 @@
 
 	// 格式为: 调用约定, 返回值指针, 函数名, 其它参数...
 	整型 返回值 = 0;
+	// 原形: int __stdcall MessageBoxW(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType)
 	如果 !我的库.调用(炫::标准调用约定, &返回值, "MessageBoxW", 炫_空指针, "我是内容", "我是标题", 0x00000003);
 		// 函数返回 假 则调用失败此时可以直接获取错误
 		炫错误() << 我的库.错误文本();

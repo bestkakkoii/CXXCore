@@ -23,7 +23,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 //@模块名称 炫扩展模块
 //@版本     炫扩展-核心模块
-//@日期     2025-01-08
+//@日期     2025-01-30
 //@作者     Bestkakkoii
 //@依赖     "module_cxxcore.h"
 //@QQ       1642687802
@@ -60,8 +60,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 // - **炫文本默认编码**: UTF-16LE
 // 
 // # 最新更新日志:
-// #### [2025-01-08]()
-// * 新增 CXXStack 增加栈清空函数
+// #### [2025-01-30]()
+// * ­修正 CXXDebug() 输入空字符串因越界导致崩溃的问题
 //
 // [Gitee](https://gitee.com/Bestkakkoii/CXXCore)
 // [Github](https://github.com/bestkakkoii/CXXCore)

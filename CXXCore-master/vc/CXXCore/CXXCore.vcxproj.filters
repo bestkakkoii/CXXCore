@@ -22,9 +22,6 @@
     <ClCompile Include="pch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\cxx.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\cxxapplication.cpp">
       <Filter>src</Filter>
     </ClCompile>
